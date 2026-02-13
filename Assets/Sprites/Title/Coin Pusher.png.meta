@@ -1,0 +1,1631 @@
+fileFormatVersion: 2
+guid: 89c432536ed5b81459359305341db543
+TextureImporter:
+  internalIDToNameTable: []
+  externalObjects: {}
+  serializedVersion: 12
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMasterTextureLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 0
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 0
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 3
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 4096
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Windows Store Apps
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Server
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: Coin Pusher_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 9720
+        width: 1608
+        height: 1080
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d4e8e325aa0d2214c847f2ee7d05cd4e
+      internalID: -1403808840
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Coin Pusher_1
+      rect:
+        serializedVersion: 2
+        x: 1608
+        y: 9720
+        width: 1608
+        height: 1080
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 18fbf193f5b694940a9f0bd4b316b27d
+      internalID: 187888953
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Coin Pusher_2
+      rect:
+        serializedVersion: 2
+        x: 3216
+        y: 9720
+        width: 1608
+        height: 1080
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f18f00a0a3ccb0c4e99786d2250ceebc
+      internalID: 1485198173
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Coin Pusher_3
+      rect:
+        serializedVersion: 2
+        x: 4824
+        y: 9720
+        width: 1608
+        height: 1080
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b508c38910af7814590beb3f4a15216e
+      internalID: -2134916141
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Coin Pusher_4
+      rect:
+        serializedVersion: 2
+        x: 6432
+        y: 9720
+        width: 1608
+        height: 1080
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a9e58bc136ea0d24fb951dd2e26470c6
+      internalID: 27689972
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Coin Pusher_5
+      rect:
+        serializedVersion: 2
+        x: 8040
+        y: 9720
+        width: 1608
+        height: 1080
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a504aa55c43881242bf848229527d304
+      internalID: 130567997
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Coin Pusher_6
+      rect:
+        serializedVersion: 2
+        x: 9648
+        y: 9720
+        width: 1608
+        height: 1080
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 864a665c45ee0284fbe6e193ed56319b
+      internalID: 1871134441
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Coin Pusher_7
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 8640
+        width: 1608
+        height: 1080
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a0ccb3263489246429a8491f16ebaf14
+      internalID: 169476018
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Coin Pusher_8
+      rect:
+        serializedVersion: 2
+        x: 1608
+        y: 8640
+        width: 1608
+        height: 1080
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a7242d507c974bb4a970743bd3008a0c
+      internalID: -1664302126
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Coin Pusher_9
+      rect:
+        serializedVersion: 2
+        x: 3216
+        y: 8640
+        width: 1608
+        height: 1080
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 23622ca68e8b1bd42863d68342f4d5fd
+      internalID: 1103162684
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Coin Pusher_10
+      rect:
+        serializedVersion: 2
+        x: 4824
+        y: 8640
+        width: 1608
+        height: 1080
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 44c6bc76e884f1a44b0f994ae8662496
+      internalID: 660501440
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Coin Pusher_11
+      rect:
+        serializedVersion: 2
+        x: 6432
+        y: 8640
+        width: 1608
+        height: 1080
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 70fb9e4202bf99c428389c462ecdfc18
+      internalID: 677980667
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Coin Pusher_12
+      rect:
+        serializedVersion: 2
+        x: 8040
+        y: 8640
+        width: 1608
+        height: 1080
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3a7e49f945f707041bd888a5ea19879b
+      internalID: 140258080
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Coin Pusher_13
+      rect:
+        serializedVersion: 2
+        x: 9648
+        y: 8640
+        width: 1608
+        height: 1080
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 47d0bd9aebce216499717633015a5375
+      internalID: 2072750111
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Coin Pusher_14
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 7560
+        width: 1608
+        height: 1080
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d493eb846a4526c49b4861c6e4303a1e
+      internalID: 1296591420
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Coin Pusher_15
+      rect:
+        serializedVersion: 2
+        x: 1608
+        y: 7560
+        width: 1608
+        height: 1080
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ce41a399751ebc24481e3186163a3b96
+      internalID: -609238450
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Coin Pusher_16
+      rect:
+        serializedVersion: 2
+        x: 3216
+        y: 7560
+        width: 1608
+        height: 1080
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 34c8aa0602718564a8c8de26e9fc7b8b
+      internalID: -173575741
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Coin Pusher_17
+      rect:
+        serializedVersion: 2
+        x: 4824
+        y: 7560
+        width: 1608
+        height: 1080
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3a9a762f762ef6b49859b88c9090d8ef
+      internalID: -984837860
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Coin Pusher_18
+      rect:
+        serializedVersion: 2
+        x: 6432
+        y: 7560
+        width: 1608
+        height: 1080
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3a2b109f13cb18b44ac596e26d1665fd
+      internalID: -1527412540
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Coin Pusher_19
+      rect:
+        serializedVersion: 2
+        x: 8040
+        y: 7560
+        width: 1608
+        height: 1080
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 10a5b4f91967ad146923cfbbdf08fd3a
+      internalID: 948463951
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Coin Pusher_20
+      rect:
+        serializedVersion: 2
+        x: 9648
+        y: 7560
+        width: 1608
+        height: 1080
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2fc6a872b13d80141826cdcc88885182
+      internalID: -996108572
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Coin Pusher_21
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 6480
+        width: 1608
+        height: 1080
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9c9976bebe82ab74eb4405cf2743b418
+      internalID: -356670614
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Coin Pusher_22
+      rect:
+        serializedVersion: 2
+        x: 1608
+        y: 6480
+        width: 1608
+        height: 1080
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2af9bb3297216504ba7ac6a0a4491c0c
+      internalID: -1205777002
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Coin Pusher_23
+      rect:
+        serializedVersion: 2
+        x: 3216
+        y: 6480
+        width: 1608
+        height: 1080
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6991f72a1d2dade49a31c8a7a265341b
+      internalID: 1996222728
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Coin Pusher_24
+      rect:
+        serializedVersion: 2
+        x: 4824
+        y: 6480
+        width: 1608
+        height: 1080
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e0d958c2b55affc49bf85feb60d69734
+      internalID: 1861634678
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Coin Pusher_25
+      rect:
+        serializedVersion: 2
+        x: 6432
+        y: 6480
+        width: 1608
+        height: 1080
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2cc305ac6b4dfdd48a14f6b747b05569
+      internalID: 1028049328
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Coin Pusher_26
+      rect:
+        serializedVersion: 2
+        x: 8040
+        y: 6480
+        width: 1608
+        height: 1080
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2b9770a370b26e547a74a7fe769da3d0
+      internalID: -624912303
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Coin Pusher_27
+      rect:
+        serializedVersion: 2
+        x: 9648
+        y: 6480
+        width: 1608
+        height: 1080
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ee33b9bfaf7087647bfcd5ded84443f9
+      internalID: 67281858
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Coin Pusher_28
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 5400
+        width: 1608
+        height: 1080
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 75ce45a1a840e8b4181edb2cedf21cb2
+      internalID: 1878884642
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Coin Pusher_29
+      rect:
+        serializedVersion: 2
+        x: 1608
+        y: 5400
+        width: 1608
+        height: 1080
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 76bcf3d590c8e694091dba06fdb5c659
+      internalID: -2079057395
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Coin Pusher_30
+      rect:
+        serializedVersion: 2
+        x: 3216
+        y: 5400
+        width: 1608
+        height: 1080
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e37b0ef915b7d4d4c9a1d5e5caf4edff
+      internalID: -825785849
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Coin Pusher_31
+      rect:
+        serializedVersion: 2
+        x: 4824
+        y: 5400
+        width: 1608
+        height: 1080
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a96e917126f76334993d64b1bc2cabec
+      internalID: 1560630302
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Coin Pusher_32
+      rect:
+        serializedVersion: 2
+        x: 6432
+        y: 5400
+        width: 1608
+        height: 1080
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4f30ddfacf7a4f041ae6509fbcb19382
+      internalID: -1733916146
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Coin Pusher_33
+      rect:
+        serializedVersion: 2
+        x: 8040
+        y: 5400
+        width: 1608
+        height: 1080
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 67d1fa1a23b9fba4abf2c3c61bf11138
+      internalID: -1078233057
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Coin Pusher_34
+      rect:
+        serializedVersion: 2
+        x: 9648
+        y: 5400
+        width: 1608
+        height: 1080
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 153043b7304fb9242999f73efc9f5e38
+      internalID: -606885813
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Coin Pusher_35
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 4320
+        width: 1608
+        height: 1080
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 769cb508a4ad81a4ea4d174f4771f2ed
+      internalID: 604833539
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Coin Pusher_36
+      rect:
+        serializedVersion: 2
+        x: 1608
+        y: 4320
+        width: 1608
+        height: 1080
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 751afe12022f26e4bacd8116071b9023
+      internalID: 182520676
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Coin Pusher_37
+      rect:
+        serializedVersion: 2
+        x: 3216
+        y: 4320
+        width: 1608
+        height: 1080
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 127a7488564ead6499ee6bc62b2a3fe6
+      internalID: 67189839
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Coin Pusher_38
+      rect:
+        serializedVersion: 2
+        x: 4824
+        y: 4320
+        width: 1608
+        height: 1080
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2d191da820e91364487a63aebb0b26b1
+      internalID: -1233916633
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Coin Pusher_39
+      rect:
+        serializedVersion: 2
+        x: 6432
+        y: 4320
+        width: 1608
+        height: 1080
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: caeb9374d229c8149863ca055091dca9
+      internalID: -1046665407
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Coin Pusher_40
+      rect:
+        serializedVersion: 2
+        x: 8040
+        y: 4320
+        width: 1608
+        height: 1080
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 690a30308d9f98f4b8088ddc2016b962
+      internalID: -1348043325
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Coin Pusher_41
+      rect:
+        serializedVersion: 2
+        x: 9648
+        y: 4320
+        width: 1608
+        height: 1080
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 743a4cdc0db704e4685d7069a96c33a6
+      internalID: 245388463
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Coin Pusher_42
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 3240
+        width: 1608
+        height: 1080
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: eeb1d72b1cf1f0943b74fd24fa4cf188
+      internalID: -593248937
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Coin Pusher_43
+      rect:
+        serializedVersion: 2
+        x: 1608
+        y: 3240
+        width: 1608
+        height: 1080
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c2e1677284c663346a1c9cb1dce05787
+      internalID: -1247688553
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Coin Pusher_44
+      rect:
+        serializedVersion: 2
+        x: 3216
+        y: 3240
+        width: 1608
+        height: 1080
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7b027fce2931d3d4ba30191578ad684f
+      internalID: 253341777
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Coin Pusher_45
+      rect:
+        serializedVersion: 2
+        x: 4824
+        y: 3240
+        width: 1608
+        height: 1080
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 60497d13db93b054489a6ca10aa635bf
+      internalID: -950215913
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Coin Pusher_46
+      rect:
+        serializedVersion: 2
+        x: 6432
+        y: 3240
+        width: 1608
+        height: 1080
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0aee41968755c7540b7e1a29d7320903
+      internalID: 1219122517
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Coin Pusher_47
+      rect:
+        serializedVersion: 2
+        x: 8040
+        y: 3240
+        width: 1608
+        height: 1080
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e4164cf9bb6a491498b2ab27827f0892
+      internalID: -579191992
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Coin Pusher_48
+      rect:
+        serializedVersion: 2
+        x: 9648
+        y: 3240
+        width: 1608
+        height: 1080
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1b18e31172f9c5544b8fd26bac7a0717
+      internalID: -1700743644
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Coin Pusher_49
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 2160
+        width: 1608
+        height: 1080
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1d70b664313360a4f8e974ba350b0e58
+      internalID: -1531712714
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Coin Pusher_50
+      rect:
+        serializedVersion: 2
+        x: 1608
+        y: 2160
+        width: 1608
+        height: 1080
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 776fee86db4c1e64897177f80f07c227
+      internalID: 1380273182
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Coin Pusher_51
+      rect:
+        serializedVersion: 2
+        x: 3216
+        y: 2160
+        width: 1608
+        height: 1080
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4d8ae5cc5cff01948a88726c88b9f1aa
+      internalID: -1200083223
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Coin Pusher_52
+      rect:
+        serializedVersion: 2
+        x: 4824
+        y: 2160
+        width: 1608
+        height: 1080
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e95edc3c959983c4cada133e2a21623a
+      internalID: 550164689
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Coin Pusher_53
+      rect:
+        serializedVersion: 2
+        x: 6432
+        y: 2160
+        width: 1608
+        height: 1080
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9a13a5f4c767aa841b58690c9cf1f643
+      internalID: -217504035
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Coin Pusher_54
+      rect:
+        serializedVersion: 2
+        x: 8040
+        y: 2160
+        width: 1608
+        height: 1080
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d75005d4ae5749a48a251aa5487ee3a8
+      internalID: -1631488073
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Coin Pusher_55
+      rect:
+        serializedVersion: 2
+        x: 9648
+        y: 2160
+        width: 1608
+        height: 1080
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8a971fa3f6693fc40a7a407dfd8b1d4d
+      internalID: -1538969984
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Coin Pusher_56
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 1080
+        width: 1608
+        height: 1080
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5506162f4fb7e2c4988cd208f749eef6
+      internalID: -267200329
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Coin Pusher_57
+      rect:
+        serializedVersion: 2
+        x: 1608
+        y: 1080
+        width: 1608
+        height: 1080
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6ac5c43ccb843fc41b8a7fd11abb08b4
+      internalID: -1825692546
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Coin Pusher_58
+      rect:
+        serializedVersion: 2
+        x: 3216
+        y: 1080
+        width: 1608
+        height: 1080
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1f9a303e97a8ac24b948230c9dc0fb23
+      internalID: -398731270
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Coin Pusher_59
+      rect:
+        serializedVersion: 2
+        x: 4824
+        y: 1080
+        width: 1608
+        height: 1080
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 281e08567ae6b7343b67f01549742b95
+      internalID: 763995830
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Coin Pusher_60
+      rect:
+        serializedVersion: 2
+        x: 6432
+        y: 1080
+        width: 1608
+        height: 1080
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d581b0f27830a534db56d9169594b8c5
+      internalID: 2100310150
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Coin Pusher_61
+      rect:
+        serializedVersion: 2
+        x: 8040
+        y: 1080
+        width: 1608
+        height: 1080
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a7d101d2ff6a75548bab6c00af38a0a5
+      internalID: -2025534617
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Coin Pusher_62
+      rect:
+        serializedVersion: 2
+        x: 9648
+        y: 1080
+        width: 1608
+        height: 1080
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 436ad5a2aa4ee75469177398e77fa6b5
+      internalID: -1776355106
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Coin Pusher_63
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 0
+        width: 1608
+        height: 1080
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7098ab0dbebbc8243bd0bf4745c7b7f2
+      internalID: 1522415923
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Coin Pusher_64
+      rect:
+        serializedVersion: 2
+        x: 1608
+        y: 0
+        width: 1608
+        height: 1080
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3784b0335fa00a0469b22298ad5200b6
+      internalID: 888967014
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Coin Pusher_65
+      rect:
+        serializedVersion: 2
+        x: 3216
+        y: 0
+        width: 1608
+        height: 1080
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f5224b2e50e9ef740aa286c923a1d896
+      internalID: -1048494636
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Coin Pusher_66
+      rect:
+        serializedVersion: 2
+        x: 4824
+        y: 0
+        width: 1608
+        height: 1080
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5f20b078374fe7b4e96ea3eeb4aaa84a
+      internalID: -1768014721
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Coin Pusher_67
+      rect:
+        serializedVersion: 2
+        x: 6432
+        y: 0
+        width: 1608
+        height: 1080
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ea3656d717aea0f4e95afc976844292c
+      internalID: -60374745
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    physicsShape: []
+    bones: []
+    spriteID: 5e97eb03825dee720800000000000000
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    nameFileIdTable:
+      Coin Pusher_0: -1403808840
+      Coin Pusher_1: 187888953
+      Coin Pusher_10: 660501440
+      Coin Pusher_11: 677980667
+      Coin Pusher_12: 140258080
+      Coin Pusher_13: 2072750111
+      Coin Pusher_14: 1296591420
+      Coin Pusher_15: -609238450
+      Coin Pusher_16: -173575741
+      Coin Pusher_17: -984837860
+      Coin Pusher_18: -1527412540
+      Coin Pusher_19: 948463951
+      Coin Pusher_2: 1485198173
+      Coin Pusher_20: -996108572
+      Coin Pusher_21: -356670614
+      Coin Pusher_22: -1205777002
+      Coin Pusher_23: 1996222728
+      Coin Pusher_24: 1861634678
+      Coin Pusher_25: 1028049328
+      Coin Pusher_26: -624912303
+      Coin Pusher_27: 67281858
+      Coin Pusher_28: 1878884642
+      Coin Pusher_29: -2079057395
+      Coin Pusher_3: -2134916141
+      Coin Pusher_30: -825785849
+      Coin Pusher_31: 1560630302
+      Coin Pusher_32: -1733916146
+      Coin Pusher_33: -1078233057
+      Coin Pusher_34: -606885813
+      Coin Pusher_35: 604833539
+      Coin Pusher_36: 182520676
+      Coin Pusher_37: 67189839
+      Coin Pusher_38: -1233916633
+      Coin Pusher_39: -1046665407
+      Coin Pusher_4: 27689972
+      Coin Pusher_40: -1348043325
+      Coin Pusher_41: 245388463
+      Coin Pusher_42: -593248937
+      Coin Pusher_43: -1247688553
+      Coin Pusher_44: 253341777
+      Coin Pusher_45: -950215913
+      Coin Pusher_46: 1219122517
+      Coin Pusher_47: -579191992
+      Coin Pusher_48: -1700743644
+      Coin Pusher_49: -1531712714
+      Coin Pusher_5: 130567997
+      Coin Pusher_50: 1380273182
+      Coin Pusher_51: -1200083223
+      Coin Pusher_52: 550164689
+      Coin Pusher_53: -217504035
+      Coin Pusher_54: -1631488073
+      Coin Pusher_55: -1538969984
+      Coin Pusher_56: -267200329
+      Coin Pusher_57: -1825692546
+      Coin Pusher_58: -398731270
+      Coin Pusher_59: 763995830
+      Coin Pusher_6: 1871134441
+      Coin Pusher_60: 2100310150
+      Coin Pusher_61: -2025534617
+      Coin Pusher_62: -1776355106
+      Coin Pusher_63: 1522415923
+      Coin Pusher_64: 888967014
+      Coin Pusher_65: -1048494636
+      Coin Pusher_66: -1768014721
+      Coin Pusher_67: -60374745
+      Coin Pusher_7: 169476018
+      Coin Pusher_8: -1664302126
+      Coin Pusher_9: 1103162684
+  spritePackingTag: 
+  pSDRemoveMatte: 0
+  pSDShowRemoveMatteOption: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
