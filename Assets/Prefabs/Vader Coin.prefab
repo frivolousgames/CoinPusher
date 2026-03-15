@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 8521375397618208873}
   m_Layer: 0
   m_Name: Vader Coin
-  m_TagString: Untagged
+  m_TagString: VaderSave
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

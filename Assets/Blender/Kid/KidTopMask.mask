@@ -1,0 +1,200 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!319 &31900000
+AvatarMask:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: KidTopMask
+  m_Mask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+  m_Elements:
+  - m_Path: 
+    m_Weight: 1
+  - m_Path: Body Mid
+    m_Weight: 0
+  - m_Path: Buckle Mid
+    m_Weight: 0
+  - m_Path: Button Mid
+    m_Weight: 0
+  - m_Path: Eyes L Mid
+    m_Weight: 0
+  - m_Path: Eyes R Mid
+    m_Weight: 0
+  - m_Path: Gooch Mid Rig
+    m_Weight: 1
+  - m_Path: Gooch Mid Rig/Bone
+    m_Weight: 0
+  - m_Path: Gooch Mid Rig/Bone/Bone_end
+    m_Weight: 1
+  - m_Path: Gooch Mid Rig/Bone.001
+    m_Weight: 0
+  - m_Path: Gooch Mid Rig/Bone.001/Bone.001_end
+    m_Weight: 1
+  - m_Path: Gooch Mid Rig/Spine Bot
+    m_Weight: 0
+  - m_Path: Gooch Mid Rig/Spine Bot/pelvis.L
+    m_Weight: 0
+  - m_Path: Gooch Mid Rig/Spine Bot/pelvis.L/pelvis.L_end
+    m_Weight: 1
+  - m_Path: Gooch Mid Rig/Spine Bot/pelvis.R
+    m_Weight: 0
+  - m_Path: Gooch Mid Rig/Spine Bot/pelvis.R/pelvis.R_end
+    m_Weight: 1
+  - m_Path: Gooch Mid Rig/Spine Bot/Spine Mid Bot
+    m_Weight: 1
+  - m_Path: Gooch Mid Rig/Spine Bot/Spine Mid Bot/Spine Mid Top
+    m_Weight: 1
+  - m_Path: Gooch Mid Rig/Spine Bot/Spine Mid Bot/Spine Mid Top/Spine Top
+    m_Weight: 1
+  - m_Path: Gooch Mid Rig/Spine Bot/Spine Mid Bot/Spine Mid Top/Spine Top/breast.L
+    m_Weight: 1
+  - m_Path: Gooch Mid Rig/Spine Bot/Spine Mid Bot/Spine Mid Top/Spine Top/breast.L/breast.L_end
+    m_Weight: 1
+  - m_Path: Gooch Mid Rig/Spine Bot/Spine Mid Bot/Spine Mid Top/Spine Top/breast.R
+    m_Weight: 1
+  - m_Path: Gooch Mid Rig/Spine Bot/Spine Mid Bot/Spine Mid Top/Spine Top/breast.R/breast.R_end
+    m_Weight: 1
+  - m_Path: Gooch Mid Rig/Spine Bot/Spine Mid Bot/Spine Mid Top/Spine Top/Neck
+    m_Weight: 1
+  - m_Path: Gooch Mid Rig/Spine Bot/Spine Mid Bot/Spine Mid Top/Spine Top/Neck/Neck.001
+    m_Weight: 1
+  - m_Path: Gooch Mid Rig/Spine Bot/Spine Mid Bot/Spine Mid Top/Spine Top/Neck/Neck.001/Neck.002
+    m_Weight: 1
+  - m_Path: Gooch Mid Rig/Spine Bot/Spine Mid Bot/Spine Mid Top/Spine Top/Neck/Neck.001/Neck.002/Head
+    m_Weight: 1
+  - m_Path: Gooch Mid Rig/Spine Bot/Spine Mid Bot/Spine Mid Top/Spine Top/Neck/Neck.001/Neck.002/Head/Brow
+    m_Weight: 1
+  - m_Path: Gooch Mid Rig/Spine Bot/Spine Mid Bot/Spine Mid Top/Spine Top/Neck/Neck.001/Neck.002/Head/Brow/Brow_end
+    m_Weight: 1
+  - m_Path: Gooch Mid Rig/Spine Bot/Spine Mid Bot/Spine Mid Top/Spine Top/Neck/Neck.001/Neck.002/Head/Brow.001
+    m_Weight: 1
+  - m_Path: Gooch Mid Rig/Spine Bot/Spine Mid Bot/Spine Mid Top/Spine Top/Neck/Neck.001/Neck.002/Head/Brow.001/Eye.L
+      Controller
+    m_Weight: 1
+  - m_Path: Gooch Mid Rig/Spine Bot/Spine Mid Bot/Spine Mid Top/Spine Top/Neck/Neck.001/Neck.002/Head/Brow.001/Eye.L
+      Controller/Eye.L Controller_end
+    m_Weight: 1
+  - m_Path: Gooch Mid Rig/Spine Bot/Spine Mid Bot/Spine Mid Top/Spine Top/Neck/Neck.001/Neck.002/Head/Brow.001/Eye.R
+      Controller
+    m_Weight: 1
+  - m_Path: Gooch Mid Rig/Spine Bot/Spine Mid Bot/Spine Mid Top/Spine Top/Neck/Neck.001/Neck.002/Head/Brow.001/Eye.R
+      Controller/Eye.R Controller_end
+    m_Weight: 1
+  - m_Path: Gooch Mid Rig/Spine Bot/Spine Mid Bot/Spine Mid Top/Spine Top/Neck/Neck.001/Neck.002/Head/Eye.L
+    m_Weight: 1
+  - m_Path: Gooch Mid Rig/Spine Bot/Spine Mid Bot/Spine Mid Top/Spine Top/Neck/Neck.001/Neck.002/Head/Eye.L/Eye.L_end
+    m_Weight: 1
+  - m_Path: Gooch Mid Rig/Spine Bot/Spine Mid Bot/Spine Mid Top/Spine Top/Neck/Neck.001/Neck.002/Head/Eye.R
+    m_Weight: 1
+  - m_Path: Gooch Mid Rig/Spine Bot/Spine Mid Bot/Spine Mid Top/Spine Top/Neck/Neck.001/Neck.002/Head/Eye.R/Eye.R_end
+    m_Weight: 1
+  - m_Path: Gooch Mid Rig/Spine Bot/Spine Mid Bot/Spine Mid Top/Spine Top/Neck/Neck.001/Neck.002/Head/Jaw
+    m_Weight: 1
+  - m_Path: Gooch Mid Rig/Spine Bot/Spine Mid Bot/Spine Mid Top/Spine Top/Neck/Neck.001/Neck.002/Head/Jaw/Jaw_end
+    m_Weight: 1
+  - m_Path: Gooch Mid Rig/Spine Bot/Spine Mid Bot/Spine Mid Top/Spine Top/Neck/Neck.001/Neck.002/Head/tongue
+      1
+    m_Weight: 1
+  - m_Path: Gooch Mid Rig/Spine Bot/Spine Mid Bot/Spine Mid Top/Spine Top/Neck/Neck.001/Neck.002/Head/tongue
+      1/tongue 2
+    m_Weight: 1
+  - m_Path: Gooch Mid Rig/Spine Bot/Spine Mid Bot/Spine Mid Top/Spine Top/Neck/Neck.001/Neck.002/Head/tongue
+      1/tongue 2/tongue 3
+    m_Weight: 1
+  - m_Path: Gooch Mid Rig/Spine Bot/Spine Mid Bot/Spine Mid Top/Spine Top/Neck/Neck.001/Neck.002/Head/tongue
+      1/tongue 2/tongue 3/tongue 4
+    m_Weight: 1
+  - m_Path: Gooch Mid Rig/Spine Bot/Spine Mid Bot/Spine Mid Top/Spine Top/Neck/Neck.001/Neck.002/Head/tongue
+      1/tongue 2/tongue 3/tongue 4/tongue 4_end
+    m_Weight: 1
+  - m_Path: Gooch Mid Rig/Spine Bot/Spine Mid Bot/Spine Mid Top/Spine Top/shoulder.L
+    m_Weight: 1
+  - m_Path: Gooch Mid Rig/Spine Bot/Spine Mid Bot/Spine Mid Top/Spine Top/shoulder.L/upper_arm.L
+    m_Weight: 1
+  - m_Path: Gooch Mid Rig/Spine Bot/Spine Mid Bot/Spine Mid Top/Spine Top/shoulder.L/upper_arm.L/forearm.L
+    m_Weight: 1
+  - m_Path: Gooch Mid Rig/Spine Bot/Spine Mid Bot/Spine Mid Top/Spine Top/shoulder.L/upper_arm.L/forearm.L/hand.L
+    m_Weight: 1
+  - m_Path: Gooch Mid Rig/Spine Bot/Spine Mid Bot/Spine Mid Top/Spine Top/shoulder.L/upper_arm.L/forearm.L/hand.L/palm.02.L
+    m_Weight: 1
+  - m_Path: Gooch Mid Rig/Spine Bot/Spine Mid Bot/Spine Mid Top/Spine Top/shoulder.L/upper_arm.L/forearm.L/hand.L/palm.02.L/f_middle.01.L
+    m_Weight: 1
+  - m_Path: Gooch Mid Rig/Spine Bot/Spine Mid Bot/Spine Mid Top/Spine Top/shoulder.L/upper_arm.L/forearm.L/hand.L/palm.02.L/f_middle.01.L/f_middle.02.L
+    m_Weight: 1
+  - m_Path: Gooch Mid Rig/Spine Bot/Spine Mid Bot/Spine Mid Top/Spine Top/shoulder.L/upper_arm.L/forearm.L/hand.L/palm.02.L/f_middle.01.L/f_middle.02.L/f_middle.03.L
+    m_Weight: 1
+  - m_Path: Gooch Mid Rig/Spine Bot/Spine Mid Bot/Spine Mid Top/Spine Top/shoulder.L/upper_arm.L/forearm.L/hand.L/palm.02.L/f_middle.01.L/f_middle.02.L/f_middle.03.L/f_middle.03.L_end
+    m_Weight: 1
+  - m_Path: Gooch Mid Rig/Spine Bot/Spine Mid Bot/Spine Mid Top/Spine Top/shoulder.L/upper_arm.L/forearm.L/hand.L/thumb.01.L
+    m_Weight: 1
+  - m_Path: Gooch Mid Rig/Spine Bot/Spine Mid Bot/Spine Mid Top/Spine Top/shoulder.L/upper_arm.L/forearm.L/hand.L/thumb.01.L/thumb.02.L
+    m_Weight: 1
+  - m_Path: Gooch Mid Rig/Spine Bot/Spine Mid Bot/Spine Mid Top/Spine Top/shoulder.L/upper_arm.L/forearm.L/hand.L/thumb.01.L/thumb.02.L/thumb.03.L
+    m_Weight: 1
+  - m_Path: Gooch Mid Rig/Spine Bot/Spine Mid Bot/Spine Mid Top/Spine Top/shoulder.L/upper_arm.L/forearm.L/hand.L/thumb.01.L/thumb.02.L/thumb.03.L/thumb.03.L_end
+    m_Weight: 1
+  - m_Path: Gooch Mid Rig/Spine Bot/Spine Mid Bot/Spine Mid Top/Spine Top/shoulder.R
+    m_Weight: 1
+  - m_Path: Gooch Mid Rig/Spine Bot/Spine Mid Bot/Spine Mid Top/Spine Top/shoulder.R/upper_arm.R
+    m_Weight: 1
+  - m_Path: Gooch Mid Rig/Spine Bot/Spine Mid Bot/Spine Mid Top/Spine Top/shoulder.R/upper_arm.R/forearm.R
+    m_Weight: 1
+  - m_Path: Gooch Mid Rig/Spine Bot/Spine Mid Bot/Spine Mid Top/Spine Top/shoulder.R/upper_arm.R/forearm.R/hand.R
+    m_Weight: 1
+  - m_Path: Gooch Mid Rig/Spine Bot/Spine Mid Bot/Spine Mid Top/Spine Top/shoulder.R/upper_arm.R/forearm.R/hand.R/palm.02.R
+    m_Weight: 1
+  - m_Path: Gooch Mid Rig/Spine Bot/Spine Mid Bot/Spine Mid Top/Spine Top/shoulder.R/upper_arm.R/forearm.R/hand.R/palm.02.R/f_middle.01.R
+    m_Weight: 1
+  - m_Path: Gooch Mid Rig/Spine Bot/Spine Mid Bot/Spine Mid Top/Spine Top/shoulder.R/upper_arm.R/forearm.R/hand.R/palm.02.R/f_middle.01.R/Card
+    m_Weight: 1
+  - m_Path: Gooch Mid Rig/Spine Bot/Spine Mid Bot/Spine Mid Top/Spine Top/shoulder.R/upper_arm.R/forearm.R/hand.R/palm.02.R/f_middle.01.R/f_middle.02.R
+    m_Weight: 1
+  - m_Path: Gooch Mid Rig/Spine Bot/Spine Mid Bot/Spine Mid Top/Spine Top/shoulder.R/upper_arm.R/forearm.R/hand.R/palm.02.R/f_middle.01.R/f_middle.02.R/f_middle.03.R
+    m_Weight: 1
+  - m_Path: Gooch Mid Rig/Spine Bot/Spine Mid Bot/Spine Mid Top/Spine Top/shoulder.R/upper_arm.R/forearm.R/hand.R/palm.02.R/f_middle.01.R/f_middle.02.R/f_middle.03.R/f_middle.03.R_end
+    m_Weight: 1
+  - m_Path: Gooch Mid Rig/Spine Bot/Spine Mid Bot/Spine Mid Top/Spine Top/shoulder.R/upper_arm.R/forearm.R/hand.R/thumb.01.R
+    m_Weight: 1
+  - m_Path: Gooch Mid Rig/Spine Bot/Spine Mid Bot/Spine Mid Top/Spine Top/shoulder.R/upper_arm.R/forearm.R/hand.R/thumb.01.R/thumb.02.R
+    m_Weight: 1
+  - m_Path: Gooch Mid Rig/Spine Bot/Spine Mid Bot/Spine Mid Top/Spine Top/shoulder.R/upper_arm.R/forearm.R/hand.R/thumb.01.R/thumb.02.R/thumb.03.R
+    m_Weight: 1
+  - m_Path: Gooch Mid Rig/Spine Bot/Spine Mid Bot/Spine Mid Top/Spine Top/shoulder.R/upper_arm.R/forearm.R/hand.R/thumb.01.R/thumb.02.R/thumb.03.R/thumb.03.R_end
+    m_Weight: 1
+  - m_Path: Gooch Mid Rig/Spine Bot/thigh.L
+    m_Weight: 0
+  - m_Path: Gooch Mid Rig/Spine Bot/thigh.L/shin.L
+    m_Weight: 1
+  - m_Path: Gooch Mid Rig/Spine Bot/thigh.L/shin.L/foot.L
+    m_Weight: 1
+  - m_Path: Gooch Mid Rig/Spine Bot/thigh.L/shin.L/foot.L/toe.L
+    m_Weight: 1
+  - m_Path: Gooch Mid Rig/Spine Bot/thigh.L/shin.L/foot.L/toe.L/toe.L_end
+    m_Weight: 1
+  - m_Path: Gooch Mid Rig/Spine Bot/thigh.R
+    m_Weight: 0
+  - m_Path: Gooch Mid Rig/Spine Bot/thigh.R/shin.R
+    m_Weight: 1
+  - m_Path: Gooch Mid Rig/Spine Bot/thigh.R/shin.R/foot.R
+    m_Weight: 1
+  - m_Path: Gooch Mid Rig/Spine Bot/thigh.R/shin.R/foot.R/toe.R
+    m_Weight: 1
+  - m_Path: Gooch Mid Rig/Spine Bot/thigh.R/shin.R/foot.R/toe.R/toe.R_end
+    m_Weight: 1
+  - m_Path: Gums Bottom Mid
+    m_Weight: 0
+  - m_Path: Gums Top Mid
+    m_Weight: 0
+  - m_Path: Hair Mid
+    m_Weight: 0
+  - m_Path: Overalls Mid
+    m_Weight: 0
+  - m_Path: Shirt
+    m_Weight: 0
+  - m_Path: Teeth Bot Mid
+    m_Weight: 0
+  - m_Path: Teeth Top Mid
+    m_Weight: 0
+  - m_Path: Tongue Mid
+    m_Weight: 0

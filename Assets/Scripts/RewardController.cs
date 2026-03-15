@@ -253,7 +253,7 @@ public class RewardController : MonoBehaviour
     {
         ////MILESTONE PANEL///
         milestonePanelAnim.SetBool("closed", closed);
-        Debug.Log("Closed: " + closed);
+        //Debug.Log("Closed: " + closed);
 
         ///SCORES///////
         if (fiveK == 0)
@@ -262,7 +262,7 @@ public class RewardController : MonoBehaviour
             {
                 fiveK = 1;
                 popUpList.Add("5K");
-                Debug.Log("5K");
+                //Debug.Log("5K");
             }
         }
         if (tenK == 0)
@@ -271,7 +271,7 @@ public class RewardController : MonoBehaviour
             {
                 tenK = 1;
                 popUpList.Add("10K");
-                Debug.Log("10K");
+                //Debug.Log("10K");
             }
         }
         if (twentyFiveK == 0)
@@ -280,7 +280,7 @@ public class RewardController : MonoBehaviour
             {
                 twentyFiveK = 1;
                 popUpList.Add("25K");
-                Debug.Log("25K");
+                //Debug.Log("25K");
             }
         }
         if (fiftyK == 0)
@@ -289,7 +289,7 @@ public class RewardController : MonoBehaviour
             {
                 fiftyK = 1;
                 popUpList.Add("50K");
-                Debug.Log("50K");
+                //Debug.Log("50K");
             }
         }
         if (seventyFiveK == 0)
@@ -298,7 +298,7 @@ public class RewardController : MonoBehaviour
             {
                 seventyFiveK = 1;
                 popUpList.Add("75K");
-                Debug.Log("75K");
+                //Debug.Log("75K");
             }
         }
         if (hundredK == 0)
@@ -307,7 +307,7 @@ public class RewardController : MonoBehaviour
             {
                 hundredK = 1;
                 popUpList.Add("100K");
-                Debug.Log("100K");
+                //Debug.Log("100K");
             }
         }
         if (twofiftyK == 0)
@@ -316,7 +316,7 @@ public class RewardController : MonoBehaviour
             {
                 twofiftyK = 1;
                 popUpList.Add("250K");
-                Debug.Log("250K");
+                //Debug.Log("250K");
             }
         }
         if (fiveHundredK == 0)
@@ -325,7 +325,7 @@ public class RewardController : MonoBehaviour
             {
                 fiveHundredK = 1;
                 popUpList.Add("500K");
-                Debug.Log("500K");
+                //Debug.Log("500K");
             }
         }
         if (million == 0)
@@ -334,7 +334,7 @@ public class RewardController : MonoBehaviour
             {
                 million = 1;
                 popUpList.Add("Million");
-                Debug.Log("Million");
+                //Debug.Log("Million");
             }
         }
 
@@ -373,7 +373,7 @@ public class RewardController : MonoBehaviour
             {
                 if(PlayerPrefs.GetInt("Full Sets", 0)  >= setValues[i])
                 {
-                    Debug.Log("Value: " + setValues[i]);
+                    //Debug.Log("Value: " + setValues[i]);
                     PlayerPrefs.SetInt(setNames[i], 1);
                     setInts[i] = 1;
                     rewardPopup.SetActive(true);
@@ -389,12 +389,12 @@ public class RewardController : MonoBehaviour
         {
             while(popUpList.Count > 0)
             {
-                Debug.Log("Waiting..");
+                //Debug.Log("Waiting..");
                 if (!isPopUp)
                 {
                     isPopUp = true;
                     PopUpResult(popUpList[0]);
-                    Debug.Log(popUpList[0]);
+                    //Debug.Log(popUpList[0]);
                     popUpList.RemoveAt(0);
                 }
                 yield return null;

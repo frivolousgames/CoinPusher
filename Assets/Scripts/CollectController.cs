@@ -66,6 +66,7 @@ public class CollectController : MonoBehaviour
     int yodaStartNum;
     int cardStartNum;
     int selectedStartNum;
+    int[] startingObjectNumLimits;
 
     [SerializeField]
     AudioSource spawnSound;
@@ -80,9 +81,8 @@ public class CollectController : MonoBehaviour
 
     //Gold Coin
     float goldCoinTime;
-    [SerializeField]
     float maxGoldCoinTime;
-    int goldStartNum;
+    public static int goldStartNum;
     [SerializeField]
     GameObject goldCoinObject;
     [SerializeField]
@@ -116,18 +116,25 @@ public class CollectController : MonoBehaviour
 
         startingObjectNums = new int[]
         {
-            0, trooperStartNum, vaderStartNum, yodaStartNum, cardStartNum
+            100, PlayerPrefs.GetInt("TrooperSave", 26), PlayerPrefs.GetInt("VaderSave", 25), PlayerPrefs.GetInt("YodaSave", 1), PlayerPrefs.GetInt("CardStartNum", 5), PlayerPrefs.GetInt("GoldSave", 0)
         };
 
+        startingObjectNumLimits = new int[]
+        {
+            0, trooperStartNum, vaderStartNum, yodaStartNum, cardStartNum, goldStartNum
+        };
+        
         //Gold Coin
-        goldCoinTime = PlayerPrefs.GetFloat("GoldCoinTime", maxGoldCoinTime * 60);
+        goldStartNum = 0;
+        SetGoldCoinTime();
         AddGoldCoin();
+        CheckStartingAmounts();
     }
 
     private void Update()
     {
-        Debug.Log("GCTime: " + goldCoinTime);
-        Debug.Log("GCs: " + goldStartNum);
+        //Debug.Log("GCTime: " + goldCoinTime);
+        //Debug.Log("GCs: " + goldStartNum);
     }
     private void OnTriggerEnter(Collider other)
     {
@@ -178,7 +185,7 @@ public class CollectController : MonoBehaviour
             SceneManager.score += 100;
             chosenClip = goldClip;
             RewardController.popUpList.Add("Gold");
-            goldStartNum--;
+            startingObjectNums[5]--;
             AddGoldCoin();
             Destroy(other.transform.parent.gameObject);
         }
@@ -244,7 +251,7 @@ public class CollectController : MonoBehaviour
 
     void PickNextCard()
     {
-        if(previousCards.Count > 9)
+        if(previousCards.Count > 20)
         {
             foreach(var card in previousCards)
             {
@@ -331,7 +338,7 @@ public class CollectController : MonoBehaviour
             }
         }
         spawning = true;
-        yield return new WaitForSeconds(Random.Range(10, 45));
+        yield return new WaitForSeconds(Random.Range(5, 20));
         if (spawnedObjects.Count > 0 )
         {
             float lerpTime = 0f;
@@ -342,7 +349,7 @@ public class CollectController : MonoBehaviour
                 while (shooter.position.x < posX)
                 {
                     Vector3 pos = new Vector3(posX + .02f, 15.1f, 5.85f);
-                    shooter.position = Vector3.Lerp(shooter.position, pos, lerpTime);
+                    shooter.position = Vector3.Lerp(shooter.position, pos, lerpTime * Time.deltaTime);
                     lerpTime += spawnerSpeed;
                     yield return null;
                 }
@@ -352,7 +359,7 @@ public class CollectController : MonoBehaviour
                 while (shooter.position.x > posX)
                 {
                     Vector3 pos = new Vector3(posX - .02f, 15.1f, 5.85f);
-                    shooter.position = Vector3.Lerp(shooter.position, pos, lerpTime);
+                    shooter.position = Vector3.Lerp(shooter.position, pos, lerpTime * Time.deltaTime);
                     lerpTime += spawnerSpeed;
                     yield return null;
                 }
@@ -372,7 +379,7 @@ public class CollectController : MonoBehaviour
             {
                 while (shooter.position.x < shooterStartR.x - .02f)
                 {
-                    shooter.position = Vector3.Lerp(shooter.position, shooterStartR, lerpTime);
+                    shooter.position = Vector3.Lerp(shooter.position, shooterStartR, lerpTime * Time.deltaTime);
                     lerpTime += spawnerSpeed;
                     yield return null;
                 }
@@ -382,7 +389,7 @@ public class CollectController : MonoBehaviour
             {
                 while (shooter.position.x > shooterStartL.x + .02f)
                 {
-                    shooter.position = Vector3.Lerp(shooter.position, shooterStartL, lerpTime);
+                    shooter.position = Vector3.Lerp(shooter.position, shooterStartL, lerpTime * Time.deltaTime);
                     lerpTime += spawnerSpeed;
                     yield return null;
                 }
@@ -394,10 +401,28 @@ public class CollectController : MonoBehaviour
         yield break;
     }
 
+    void CheckStartingAmounts()
+    {
+        for (int i = 0; i < startingObjectNums.Length; i++)
+        {
+            if (startingObjectNums[i] < startingObjectNumLimits[i])
+            {
+                selectedStartNum = startingObjectNumLimits[i];
+                type = i - 1;
+                for (int j = 0; j < startingObjectNumLimits[i] - startingObjectNums[i]; j++)
+                {
+                    SpawnObjects();
+                    Debug.Log((startingObjectNumLimits[i] - startingObjectNums[i]) + ": " + i);
+                }  
+            }
+
+        }
+    }
+
     ///Gold Coin
     void AddGoldCoin()
     {
-        if(goldStartNum < 1)
+        if(startingObjectNums[5] < 1)
         {
             StartCoroutine(GoldCoinDelay());
         }
@@ -409,11 +434,31 @@ public class CollectController : MonoBehaviour
             goldCoinTime -= Time.deltaTime;
             yield return null;
         }
-        goldStartNum++;
+        startingObjectNums[5]++;
         goldCoinTime = maxGoldCoinTime * 60;
         spawnedObjects.Add(goldCoinObject);
         spawnedObjectClips.Add(goldSpawnClip);
         StartCoroutine(SpawnWait());
+    }
+
+    void SetGoldCoinTime()
+    {
+        if (PlayerPrefs.GetInt("GoldCoinDrop", 0) == 1)
+        {
+            maxGoldCoinTime = 5;
+        }
+        else
+        {
+            maxGoldCoinTime = 10;
+        }
+        goldCoinTime = PlayerPrefs.GetFloat("GoldCoinTime", maxGoldCoinTime * 60);
+    }
+    public void GetGoldTimeHalf()
+    {
+        Debug.Log("GoldCoinTime: " + goldCoinTime);
+        maxGoldCoinTime = 5;
+        goldCoinTime /= 2;
+        Debug.Log("GoldCoinTime: " + goldCoinTime);
     }
 
     private void OnApplicationQuit()

@@ -1,7 +1,5 @@
 using System.Collections;
 using System.Collections.Generic;
-using UnityEditor;
-using UnityEditor.Build.Content;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -15,6 +13,8 @@ public class CoinShooter : MonoBehaviour
     float shootWait;
     public static bool isShooting;
     bool hasPlays;
+    //[SerializeField]
+    //Transform coinParent;
 
     ///BONUS//////////////
     [SerializeField]
@@ -121,7 +121,8 @@ public class CoinShooter : MonoBehaviour
     IEnumerator ShootRoutine()
     {
         yield return new WaitForSeconds(shootWait);
-        Instantiate(coin, coinSpawn.position, Quaternion.Euler(coinRot), transform);
+        GameObject c = Instantiate(coin, coinSpawn.position, Quaternion.Euler(coinRot), transform);
+        c.name = "Coin";
         ActivateCountLights();
         SceneManager.plays--;
         coinShootSound.Play();
@@ -271,7 +272,7 @@ public class CoinShooter : MonoBehaviour
         int lastIndex = 0;
         startSpinLength = 60 + selectedBonusIndex + 15;
         //Debug.Log("startSpinLength: " + startSpinLength);
-        startSpinSpeed = .001f;
+        startSpinSpeed = .01f;
         while (startSpin <= startSpinLength)
         {
             if (index == spinLights.Length)

@@ -12,6 +12,14 @@ TagManager:
   - Trooper
   - Gold
   - Saber
+  - ElautSave
+  - TrooperSave
+  - VaderSave
+  - YodaSave
+  - GoldSave
+  - Kid
+  - Ground
+  - HitObject
   layers:
   - Default
   - TransparentFX
@@ -22,7 +30,7 @@ TagManager:
   - Base
   - Elaut
   - Saber
-  - 
+  - PP
   - 
   - 
   - 

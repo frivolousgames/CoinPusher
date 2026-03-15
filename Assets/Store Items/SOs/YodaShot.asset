@@ -12,8 +12,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fb156c9dafebca04eadb9d25e8483d78, type: 3}
   m_Name: YodaShot
   m_EditorClassIdentifier: 
-  itemName: Yoda Coin Bonus
+  itemName: Yoda Coin Bonus Shot
   itemPrice: 100000
   itemImage: {fileID: 21300000, guid: 7c414310ccdec6e40a4e3a161b9e0780, type: 3}
   isBonus: 1
   isBonusMulti: 0
+  isSaber: 0

@@ -21,9 +21,10 @@ public class SaberButton : MonoBehaviour
     private void Start()
     {
         SetButton();
+        //Debug.Log("Amount: " + PlayerPrefs.GetInt("Saber", 0));
     }
 
-    void SetButton()
+    public void SetButton()
     {
         if (PlayerPrefs.GetInt("Saber", 0) < 1)
         {
@@ -58,14 +59,12 @@ public class SaberButton : MonoBehaviour
         if (button.enabled)
         {
             int amount = PlayerPrefs.GetInt("Saber", 0);
-            PlayerPrefs.SetInt("Saber", amount--);
+            //Debug.Log("Amount: " + amount);
+            PlayerPrefs.SetInt("Saber", amount - 1);
+            //Debug.Log("Amount: " + PlayerPrefs.GetInt("Saber", 0));
             useImage.SetActive(false);
             RewardController.popUpList.Add("Saber");
-            if (amount == 1)
-            {
-                button.enabled = false;
-                multiText.text = string.Empty;
-            }
+            SetButton();
         }
     }
 }

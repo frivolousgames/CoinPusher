@@ -24,7 +24,7 @@ public class OpenCardMenu : MonoBehaviour
 
     public void SlideOut()
     {
-        Debug.Log("Clicked");
+        //Debug.Log("Clicked");
         if(isOut)
         {
             isOut = false;

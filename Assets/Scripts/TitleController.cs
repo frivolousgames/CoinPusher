@@ -16,6 +16,9 @@ public class TitleController : MonoBehaviour
     [SerializeField]
     GameObject confirmNewGamePanel;
 
+    [SerializeField]
+    GameObject loadScreen;
+
     private void Awake()
     {
         buttonNames = new string[]
@@ -42,6 +45,7 @@ public class TitleController : MonoBehaviour
         }
         yield return new WaitForSeconds(.4f);
         PlayerPrefs.SetInt("NewGame", 1);
+        loadScreen.SetActive(true);
         asyncload.allowSceneActivation = true;
     }
 

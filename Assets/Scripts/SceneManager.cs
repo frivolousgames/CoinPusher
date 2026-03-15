@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.Events;
 using UnityEngine.UI;
@@ -36,12 +37,35 @@ public class SceneManager : MonoBehaviour
     [SerializeField]
     GameObject audioSource;
 
+    ///Save/Load
+    [SerializeField]
+    GameObject startObjects;
+    SaveData1 saveData;
+    GameObject[] saveElaut;
+    GameObject[] saveTrooper;
+    GameObject[] saveVader;
+    GameObject[] saveYoda;
+    GameObject[] saveCard;
+    GameObject[] saveGold;
+    GameObject[][] saveIndObjects;
+    string[] saveIndObjecttypes;
+    List<GameObject> saveObjects;
+    string[] saveTypes;
+    [SerializeField]
+    GameObject[] saveObjectPrefabs;
+    [SerializeField]
+    Transform saveParent;
+    [SerializeField]
+    GameObject[] cardSavePrefabs;
+
     private void Awake()
     {
         //PlayerPrefs.DeleteAll();//TEMP
         //PlayerPrefs.SetInt("Full Sets", 0);//TEMP
         Physics.gravity = new Vector3(0f, -50, 0f);
-        //score = PlayerPrefs.GetInt("Score", 2000000);
+        Application.targetFrameRate = 60;
+        QualitySettings.vSyncCount = 0;
+        score = PlayerPrefs.GetInt("Score", 0);
         plays = PlayerPrefs.GetInt("Plays", 0);
         cards = PlayerPrefs.GetInt("Cards", 0);
         card0 = PlayerPrefs.GetInt("Card0", 0);
@@ -57,27 +81,51 @@ public class SceneManager : MonoBehaviour
         {
             card0, card1, card2, card3, card4, card5, card6, card7
         };
-        //fullSet = false;
-        //fullSetRunning = false;
 
+        ///Save
+        
+        saveData = new SaveData1();
+        saveTypes = new string[]
+        {
+            "Elaut", "Trooper", "Vader", "Yoda", "Card", "Gold"
+        };
+        saveObjects = new List<GameObject>();
+        saveIndObjects = new GameObject[][]
+        {
+            saveElaut, saveTrooper, saveVader, saveYoda, saveCard, saveGold
+        };
+        saveIndObjecttypes = new string[]
+        {
+            "Elaut", "Trooper", "Vader", "Yoda", "Card", "Gold"
+        };
         StartCoroutine(LoadDisable());
     }
 
     private void Start()
     {
+        for (int j = 0; j < saveTypes.Length; j++)
+        {
+            saveData.LoadObject(saveObjectPrefabs[j], cardSavePrefabs, saveObjectPrefabs[j].tag, saveParent);
+
+        }
+        if (PlayerPrefs.GetInt("New Game", 0) == 0)
+        {
+            PlayerPrefs.SetInt("New Game", 1);
+            startObjects.SetActive(true);
+        }
         playsText.text = plays.ToString();
         scoreText.text = score.ToString();
         int i = 0;
         foreach (var c in cardArray)
         {
-            //Debug.Log(i + ": " + c);
+            //Debug.Log(j + ": " + c);
             i++;
         }
     }
 
     private void Update()
     {
-        //ebug.Log(PlayerPrefs.GetInt("Full Sets", 0));
+        //Debug.Log(PlayerPrefs.GetInt("Full Sets", 0));
         playsText.text = plays.ToString();
         scoreText.text = score.ToString();
     }
@@ -89,4 +137,46 @@ public class SceneManager : MonoBehaviour
         audioSource.SetActive(true);
     }
 
+    void SaveCardAmounts()
+    {
+        for(int i = 0; i < cardArray.Length; i++)
+        {
+            PlayerPrefs.SetInt("Card" + i, cardArray[i]);
+        }
+    }
+    void GatherSaveobjects()
+    {
+        for (int i = 0; i < saveIndObjects.Length; i++)
+        {
+            if (saveTypes[i] == "Card")
+            {
+                saveIndObjects[i] = GameObject.FindGameObjectsWithTag(saveTypes[i]);
+            }
+            else
+            {
+                saveIndObjects[i] = GameObject.FindGameObjectsWithTag(saveTypes[i] + "Save");
+            }
+        }
+    }
+
+    void SaveObjects()
+    {
+        for (int i = 0; i < saveIndObjects.Length; i++)
+        {
+            for (int j = 0; j < saveIndObjects[i].Length; j++)
+            {
+                saveData.SaveObject(saveIndObjects[i][j], saveIndObjects[i][j].tag);
+                //Debug.Log("Tag: " + saveIndObjects[i][j].tag);
+            }
+        }
+    }
+    private void OnApplicationQuit()
+    {
+        SaveCardAmounts();
+        GatherSaveobjects();
+        SaveObjects();
+        PlayerPrefs.SetInt("Score", score);
+        PlayerPrefs.SetInt("Plays", plays);
+        //PlayerPrefs.DeleteAll();//TEMP
+    }
 }

@@ -10,4 +10,6 @@ public class StoreItemObject : ScriptableObject
     public Sprite itemImage;
     public bool isBonus;
     public bool isBonusMulti;
+    public bool isSaber;
+    public bool isGoldHalfTime;
 }

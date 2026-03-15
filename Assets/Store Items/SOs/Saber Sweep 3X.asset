@@ -12,8 +12,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fb156c9dafebca04eadb9d25e8483d78, type: 3}
   m_Name: Saber Sweep 3X
   m_EditorClassIdentifier: 
-  itemName: Saber Sweep 3X
+  itemName: Saber Sweep X3
   itemPrice: 25000
-  itemImage: {fileID: 21300000, guid: f277cbc3b649ba54cab9c436da81ec52, type: 3}
+  itemImage: {fileID: 21300000, guid: 0354e28e1569af34693edd2656caecec, type: 3}
   isBonus: 0
   isBonusMulti: 0
+  isSaber: 1
+  isGoldHalfTime: 0

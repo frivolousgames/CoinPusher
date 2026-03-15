@@ -74,11 +74,33 @@ public class StoreController : MonoBehaviour
     //BONUS
     bool isBonus;
     bool isMulti;
+    string[] bonusTypes;
+    string[] multiTypes;
+    string chosenBonus;
+    
+
+    //SABER
+    bool isSaber;
+    int[] sabers;
+    string[] saberTypes;
+    int chosenSaber;
+    string chosenSaberType;
+    [SerializeField]
+    UnityEvent saberEvent;
+
+    //GOLD HALF TIME
+    bool isGoldHalfTime;
+    [SerializeField]
+    UnityEvent goldHalfTimeEvent;
 
     private void Awake()
     {
         galleryImages = new List<Image>();
         itemPrices = new int[storeItemObjects.Length];
+        sabers = new int[] {1, 3};
+        saberTypes = new string[] { "Saber Sweep", "Saber Sweep 3X" };
+        multiTypes = new string[] { "Vader Coin Bonus Shot X2", "Yoda Coin Bonus Shot X2", "Card Bonus Shot X2" };
+        bonusTypes = new string[] { "VaderShot", "YodaShot", "CardShot" };
         CreatePricesArray();
         SortItems();
         CreateItems();
@@ -152,24 +174,72 @@ public class StoreController : MonoBehaviour
                     if (storeItemObjects[i].isBonusMulti)
                     {
                         isMulti = true;
+                        for(int k = 0; k < bonusTypes.Length; k++)
+                        {
+                            if (multiTypes[k] == storeItemObjects[i].itemName)
+                            {
+                                chosenBonus = bonusTypes[k];
+                                break;
+                            }
+                        }
                     }
                     else
                     {
                         isMulti = false;
 
                     }
-                    //
+                    //Saber
+                    if (storeItemObjects[i].isSaber)
+                    {
+                        isSaber = true;
+                        for(int j = 0; j < sabers.Length; j++)
+                        {
+                            if (storeItemObjects[i].itemName == saberTypes[j])
+                            {
+                                chosenSaber = sabers[j];
+                                chosenSaberType = "Saber";
+                                break;
+                            }
+                        }
+                    }
+                    else
+                    {
+                        isSaber = false;
+                    }
+                    //Gold
+                    if (storeItemObjects[i].isGoldHalfTime)
+                    {
+                        isGoldHalfTime = true;
+                    }
+                    else
+                    {
+                        isGoldHalfTime = false;
+                    }
 
                     if (PlayerPrefs.GetInt(chosenObject, 0) == 1)
                     {
-                        itemBlock.SetActive(true);
-                        buyButtonBlock.SetActive(true);
+                        if(isSaber)
+                        {
+
+                        }
+                        else
+                        {
+                            itemBlock.SetActive(true);
+                            buyButtonBlock.SetActive(true);
+                        }
                     }
                     else if (chosenPrice > SceneManager.score)
                     {
                         itemBlock.SetActive(false);
                         buyButtonBlock.SetActive(true);
-                    }                  
+                    }
+                    else if (isMulti && PlayerPrefs.GetInt(chosenBonus, 0) < 1)
+                    {
+                        itemBlock.SetActive(false);
+                        buyButtonBlock.SetActive(true);
+                        Debug.Log("Chosen Bonus: " + chosenBonus);
+                    }
+
                     else
                     {
                         itemBlock.SetActive(false);
@@ -211,10 +281,34 @@ public class StoreController : MonoBehaviour
         {
             PlayerPrefs.SetInt(chosenObject, 2);
         }
+        else if (isSaber)
+        {
+            int s = PlayerPrefs.GetInt(chosenSaberType, 0);
+            PlayerPrefs.SetInt(chosenSaberType, s + chosenSaber);
+            saberEvent.Invoke();
+            SceneManager.score -= chosenPrice;
+            Text pS = Instantiate(priceSubtractor, mainCanvas);
+            pS.transform.position = pointsTrans.position;
+            pS.text = "-" + chosenPrice;
+            buyMenu.SetActive(false);
+            if (chosenPrice > SceneManager.score)
+            {
+                itemBlock.SetActive(false);
+                buyButtonBlock.SetActive(true);
+            }
+            SetGalleryImageColor();
+            CheckForAllItems();
+            return;
+        }
         else
         {
             PlayerPrefs.SetInt(chosenObject, 1);
         }
+        if (isGoldHalfTime)
+        {
+            goldHalfTimeEvent.Invoke();
+        }
+
         Debug.Log("Bought");
         SceneManager.score -= chosenPrice;
         Text ps = Instantiate(priceSubtractor, mainCanvas);
@@ -258,5 +352,11 @@ public class StoreController : MonoBehaviour
                 i.color = haveColor;
             }
         }
+    }
+
+    //SABER
+    void CheckSaber()
+    {
+
     }
 }
