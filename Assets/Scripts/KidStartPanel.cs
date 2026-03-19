@@ -5,6 +5,8 @@ using UnityEngine;
 public class KidStartPanel : MonoBehaviour
 {
     Animator anim;
+    [SerializeField]
+    bool go;
     public static bool isStarted;
 
     private void Awake()
@@ -15,10 +17,15 @@ public class KidStartPanel : MonoBehaviour
 
     private void Update()
     {
-        anim.SetBool("isStarted", isStarted);
+        anim.SetBool("go", go);
     }
 
     public void StartButton()
+    {
+        go = true;
+    }
+
+    public void StartPlay()
     {
         isStarted = true;
     }

@@ -94,7 +94,7 @@ public class CoinShooter : MonoBehaviour
     private void Update()
     {
         //hasPlays = GameManager.hasPlays;
-        //plays = GameManagerDependencyInfo.plays
+        //credits = GameManagerDependencyInfo.credits
         
     }
 
@@ -356,7 +356,7 @@ public class CoinShooter : MonoBehaviour
         }
         //Instantiate(coin, coinSpawn.position, Quaternion.Euler(coinRot), transform);
         ActivateCountLights();
-        //SceneManager.plays--;
+        //SceneManager.credits--;
         coinShootSound.Play();
         int tempCoinIndex = Random.Range(0, coinClips.Count);
         coinShootReal.pitch = Random.Range(.9f, 1.1f);

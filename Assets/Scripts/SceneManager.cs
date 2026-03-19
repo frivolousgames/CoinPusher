@@ -8,6 +8,7 @@ using UnityEngine.UI;
 public class SceneManager : MonoBehaviour
 {
     public static int score;
+    public static int credits;
     public static int plays;
     public static int cards;
     int card0;
@@ -66,6 +67,7 @@ public class SceneManager : MonoBehaviour
         Application.targetFrameRate = 60;
         QualitySettings.vSyncCount = 0;
         score = PlayerPrefs.GetInt("Score", 0);
+        credits = PlayerPrefs.GetInt("Credits", 1000);
         plays = PlayerPrefs.GetInt("Plays", 0);
         cards = PlayerPrefs.GetInt("Cards", 0);
         card0 = PlayerPrefs.GetInt("Card0", 0);

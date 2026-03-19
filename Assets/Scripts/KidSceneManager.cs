@@ -1,5 +1,4 @@
 using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -25,13 +24,21 @@ public class KidSceneManager : MonoBehaviour
     [SerializeField]
     Slider kidSlider;
     public static int kidHealth;
-    public static int kidMaxHealth = 100;
+    public static int kidMaxHealth = 1;
 
     [SerializeField]
     Text timeText;
     float maxTime = 30f;
     float time;
     public static bool isLost;
+    bool isWon;
+
+    [SerializeField]
+    GameObject endScreen;
+
+    [SerializeField]
+    int[] credits;
+    public static int selectedCredits;
 
     private void Awake()
     {
@@ -57,6 +64,30 @@ public class KidSceneManager : MonoBehaviour
         {
             time-= Time.deltaTime;
             timeText.text = Mathf.RoundToInt(time).ToString();
+            Cursor.visible = false;
+        }
+        if (Mathf.RoundToInt(time) == 0)
+        {
+            if(!isLost && !KidController.isDead)
+            {
+                isLost = true;
+                reticle.SetActive(false);
+                Cursor.visible = true;
+                endScreen.SetActive(true);
+            }
+        }
+        if(KidController.isDead)
+        {
+            if (!isWon)
+            {
+                isWon = true;
+                reticle.SetActive(false);
+                Cursor.visible = true;
+                selectedCredits = credits[Random.Range(0, credits.Length)];
+                int tempPlays = PlayerPrefs.GetInt("Credits", 0);
+                PlayerPrefs.SetInt("Credits", tempPlays + selectedCredits);
+                endScreen.SetActive(true);
+            }
         }
     }
 

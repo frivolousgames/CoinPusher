@@ -35,6 +35,10 @@ public class KidController : MonoBehaviour
     public static bool isDead;
     [SerializeField]
     bool isOver;
+    [SerializeField]
+    bool isLose;
+    [SerializeField]
+    Transform loseTrans;
 
     bool isLeft;
     bool isRight;
@@ -44,6 +48,9 @@ public class KidController : MonoBehaviour
     float walkDirection;
     [SerializeField]
     float rotSpeed;
+    [SerializeField]
+    float runSpeed;
+    float moveSpeed;
 
     [SerializeField]
     Transform targetR;
@@ -81,7 +88,7 @@ public class KidController : MonoBehaviour
         walkDirection = 1;
         isDead = false;
         reticle.SetActive(false);
-
+        moveSpeed = walkSpeed;
     }
 
     private void Start()
@@ -104,6 +111,8 @@ public class KidController : MonoBehaviour
         anim.SetBool("isTurning", isTurning);
         anim.SetBool("isDead", isDead);
         anim.SetBool("isOver", isOver);
+        anim.SetBool("isLose", isLose);
+
         //Debug.Log("IsWalking: " + isWalking);
 
         if (isDead)
@@ -115,13 +124,26 @@ public class KidController : MonoBehaviour
             jumpRight = false;
             jumpLeft = false;
             isTurning = false;
+            if(kidCoroutine != null)
+            {
+                StopCoroutine(kidCoroutine);
+            }
         }
-
+        if (!isLose)
+        {
+            if (KidSceneManager.isLost)
+            {
+                isLose = true;
+                moveSpeed = runSpeed;
+                StopCoroutine(kidCoroutine);
+                StartCoroutine(LoseRoutine());
+            }
+        }
     }
 
     private void FixedUpdate()
     {
-        Walk();
+        Walk(moveSpeed);
     }
 
     private void OnTriggerEnter(Collider other)
@@ -129,6 +151,7 @@ public class KidController : MonoBehaviour
         if (other.CompareTag("Ground"))
         {
             isLand = true;
+            Debug.Log("Landed");
         }
     }
     private void OnTriggerExit(Collider other)
@@ -136,6 +159,7 @@ public class KidController : MonoBehaviour
         if (other.CompareTag("Ground"))
         {
             isLand = false;
+            Debug.Log("InAir");
         }
     }
 
@@ -188,7 +212,7 @@ public class KidController : MonoBehaviour
         isWalking = true;
         int i = SetDirection();
         selectedTarget = targets[i];
-        while (isWalking)
+        while (isWalking && !isDead)
         {
             yield return new WaitForSeconds(Random.Range(1f, 2f));
             if (i == 0)
@@ -202,6 +226,7 @@ public class KidController : MonoBehaviour
             selectedTarget = targets[i];
             yield return null;
         }
+        Debug.Log("Exit WalkRoutine");
         yield break;
     }
 
@@ -218,18 +243,18 @@ public class KidController : MonoBehaviour
             jumpLeft = false;
         }
         transform.rotation = Quaternion.identity;
-        while(isJumpSide)
+        while(isJumpSide && !isDead)
         {
             
-            while (isLand)
+            while (isLand && !isDead)
             {
                 yield return null;
             }
-            while (!isLand)
+            while (!isLand && !isDead)
             {
                 yield return null;
             }
-            if (isLand)
+            if (isLand && !isDead)
             {
                 if (i == 0)
                 {
@@ -244,6 +269,7 @@ public class KidController : MonoBehaviour
             }
             yield return null;
         }
+        Debug.Log("Exit JumpSideRoutine");
         yield break;
     }
 
@@ -251,19 +277,21 @@ public class KidController : MonoBehaviour
     {
         isJumpUp = true;
         transform.rotation = Quaternion.identity;
+        Debug.Log("Exit JumpUpRoutine");
         yield break;
     }
 
     IEnumerator LickRoutine()
     { 
         isLicking = true;
+        Debug.Log("Exit LickRoutine");
         yield break;
     }
 
     IEnumerator TurnRoutine()
     {
         isTurning = true;
-        while (transform.rotation != Quaternion.identity)
+        while (transform.rotation != Quaternion.identity && !isDead)
         {
             if(Mathf.Abs(transform.rotation.eulerAngles.y - Quaternion.identity.eulerAngles.y) < .1f)
             {
@@ -275,12 +303,30 @@ public class KidController : MonoBehaviour
             yield return null;
         }
         isTurning = false;
+        Debug.Log("Exit TurnRoutine");
         yield break;
+    }
+
+    IEnumerator LoseRoutine()
+    {
+        //while (!isLand)
+        //{
+        //    yield return null;
+        //}
+        isJumpSide = false;
+        isJumpUp = false;
+        isLicking = false;
+        jumpRight = false;
+        jumpLeft = false;
+        isTurning = false;
+        yield return new WaitForSeconds(.5f);
+        isWalking = true;
+        selectedTarget = loseTrans;
     }
 
     public void JumpUp()
     {
-        if (isLand)
+        if (isLand && !isDead)
         {
             rb.AddForce(Vector3.up * jumpY, ForceMode.Impulse);
         } 
@@ -288,7 +334,7 @@ public class KidController : MonoBehaviour
 
     public void JumpSide()
     {
-        if (isLand)
+        if (isLand && !isDead)
         {
             if (jumpLeft)
             {
@@ -301,15 +347,15 @@ public class KidController : MonoBehaviour
         }
     }
 
-    void Walk()
+    void Walk(float moveSpeed)
     {
-        if (isWalking)
+        if (isWalking && !isDead)
         {
             Vector3 targetPos = new Vector3(selectedTarget.position.x, transform.position.y, transform.position.z);
             Vector3 rot = new Vector3(targetPos.x, 0f, 0f);
             Quaternion lookRot = Quaternion.LookRotation(-rot, Vector3.up);
             rb.MoveRotation(Quaternion.Lerp(rb.rotation, lookRot, rotSpeed * Time.fixedDeltaTime));
-            rb.MovePosition(Vector3.Lerp(transform.position, targetPos,  walkSpeed * Time.fixedDeltaTime));
+            rb.MovePosition(Vector3.Lerp(transform.position, targetPos,  moveSpeed * Time.fixedDeltaTime));
         }
     }
 
