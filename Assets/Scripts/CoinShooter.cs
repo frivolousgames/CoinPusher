@@ -102,7 +102,7 @@ public class CoinShooter : MonoBehaviour
     {
         if(!GoldCoinController.isBonusTime)
         {
-            if (!isShooting && SceneManager.plays > 0)
+            if (!isShooting && PlaySceneManager.plays > 0)
             {
                 isShooting = true;
                 StartCoroutine(ShootRoutine());
@@ -124,7 +124,7 @@ public class CoinShooter : MonoBehaviour
         GameObject c = Instantiate(coin, coinSpawn.position, Quaternion.Euler(coinRot), transform);
         c.name = "Coin";
         ActivateCountLights();
-        SceneManager.plays--;
+        PlaySceneManager.plays--;
         coinShootSound.Play();
         int tempCoinIndex = Random.Range(0, coinClips.Count);
         coinShootReal.pitch = Random.Range(.9f, 1.1f);
@@ -334,7 +334,7 @@ public class CoinShooter : MonoBehaviour
         isCounted = false;
         while (spinBonusValue > 0)
         {
-            SceneManager.plays++;
+            PlaySceneManager.plays++;
             spinBonusValue--;
             bonusText.text = spinBonusValue.ToString();
             bonusAdder.Play();
@@ -356,7 +356,7 @@ public class CoinShooter : MonoBehaviour
         }
         //Instantiate(coin, coinSpawn.position, Quaternion.Euler(coinRot), transform);
         ActivateCountLights();
-        //SceneManager.credits--;
+        //PlaySceneManager.credits--;
         coinShootSound.Play();
         int tempCoinIndex = Random.Range(0, coinClips.Count);
         coinShootReal.pitch = Random.Range(.9f, 1.1f);

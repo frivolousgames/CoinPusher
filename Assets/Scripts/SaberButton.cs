@@ -13,6 +13,11 @@ public class SaberButton : MonoBehaviour
     [SerializeField]
     Text useText;
 
+    [SerializeField]
+    Animator anim;
+    [SerializeField]
+    bool enter;
+
     private void Awake()
     {
         button = GetComponent<Image>();
@@ -24,9 +29,14 @@ public class SaberButton : MonoBehaviour
         //Debug.Log("Amount: " + PlayerPrefs.GetInt("Saber", 0));
     }
 
+    private void Update()
+    {
+        anim.SetBool("enter", enter);
+    }
+
     public void SetButton()
     {
-        if (PlayerPrefs.GetInt("Saber", 0) < 1)
+        if (PlayerPrefs.GetInt("Sabers", 0) < 1)
         {
             button.enabled = false;
             multiText.text = string.Empty;
@@ -34,7 +44,7 @@ public class SaberButton : MonoBehaviour
         else
         {
             button.enabled = true;
-            multiText.text = "x" + PlayerPrefs.GetInt("Saber", 0).ToString();
+            multiText.text = "x" + PlayerPrefs.GetInt("Sabers", 0).ToString();
         }
     }
 
@@ -42,7 +52,7 @@ public class SaberButton : MonoBehaviour
     {
         if(button.enabled)
         {
-            useImage.SetActive(true);
+            enter = true;
         }
     }
 
@@ -50,7 +60,7 @@ public class SaberButton : MonoBehaviour
     {
         if (button.enabled)
         {
-            useImage.SetActive(false);
+            enter = false;
         }
     }
 
@@ -58,12 +68,12 @@ public class SaberButton : MonoBehaviour
     {
         if (button.enabled)
         {
-            int amount = PlayerPrefs.GetInt("Saber", 0);
+            int amount = PlayerPrefs.GetInt("Sabers", 0);
             //Debug.Log("Amount: " + amount);
-            PlayerPrefs.SetInt("Saber", amount - 1);
+            PlayerPrefs.SetInt("Sabers", amount - 1);
+            enter = false;
             //Debug.Log("Amount: " + PlayerPrefs.GetInt("Saber", 0));
-            useImage.SetActive(false);
-            RewardController.popUpList.Add("Saber");
+            RewardController.popUpList.Add("Sabers");
             SetButton();
         }
     }

@@ -141,7 +141,7 @@ public class CollectController : MonoBehaviour
         if (other.CompareTag("Trooper"))
         {
             scoreAmount = 10;
-            SceneManager.score += 10;
+            PlaySceneManager.score += 10;
             chosenClip = coinClip;
             type = 0;
             startingObjectNums[1]--;
@@ -152,7 +152,7 @@ public class CollectController : MonoBehaviour
         else if (other.CompareTag("Vader"))
         {
             scoreAmount = 25;
-            SceneManager.score += 25;
+            PlaySceneManager.score += 25;
             chosenClip = coinClip;
             type = 1;
             startingObjectNums[2]--;
@@ -163,7 +163,7 @@ public class CollectController : MonoBehaviour
         else if (other.CompareTag("Yoda"))
         {
             scoreAmount = 500;
-            SceneManager.score += 500;
+            PlaySceneManager.score += 500;
             chosenClip = yodaClip;
             type = 2;
             startingObjectNums[3]--;
@@ -175,14 +175,14 @@ public class CollectController : MonoBehaviour
         else if (other.CompareTag("Elaut"))
         {
             scoreAmount = 2;
-            SceneManager.score += 2;
+            PlaySceneManager.score += 2;
             chosenClip = coinClip;
             Destroy(other.transform.parent.gameObject);
         }
         else if (other.CompareTag("Gold"))
         {
             scoreAmount = 100;
-            SceneManager.score += 100;
+            PlaySceneManager.score += 100;
             chosenClip = goldClip;
             RewardController.popUpList.Add("Gold");
             startingObjectNums[5]--;
@@ -192,7 +192,7 @@ public class CollectController : MonoBehaviour
         else
         {
             scoreAmount = 100;
-            SceneManager.score += 100;
+            PlaySceneManager.score += 100;
             chosenClip = cardClip;
             type = 3;
             startingObjectNums[4]--;
@@ -200,13 +200,13 @@ public class CollectController : MonoBehaviour
             GameObject card = Instantiate(cardAdder, cardAdderTrans);
             int.TryParse(other.gameObject.name, out cardNum);
             card.GetComponent<Image>().sprite = cardSprites[cardNum];
-            SceneManager.cardArray[cardNum]++;
+            PlaySceneManager.cardArray[cardNum]++;
             Destroy(other.gameObject);
             SpawnObjects();
             cardMenuCheck.Invoke();
             CheckCardAmount();
             //int i = 0;
-            //foreach (var c in SceneManager.cardArray)
+            //foreach (var c in PlaySceneManager.cardArray)
             //{
             //    Debug.Log(i + ": " + c);
             //    i++;
@@ -224,7 +224,7 @@ public class CollectController : MonoBehaviour
 
     void CheckCardAmount()
     {
-        foreach (var card in SceneManager.cardArray)
+        foreach (var card in PlaySceneManager.cardArray)
         {
             if (card > 0)
             {
@@ -242,9 +242,9 @@ public class CollectController : MonoBehaviour
 
     void SubtractFullSetCards()
     {
-        for(int i = 0; i < SceneManager.cardArray.Length; i++)
+        for(int i = 0; i < PlaySceneManager.cardArray.Length; i++)
         {
-            SceneManager.cardArray[i]--;
+            PlaySceneManager.cardArray[i]--;
         }
         cardMenuCheck.Invoke();
     }
@@ -412,7 +412,7 @@ public class CollectController : MonoBehaviour
                 for (int j = 0; j < startingObjectNumLimits[i] - startingObjectNums[i]; j++)
                 {
                     SpawnObjects();
-                    Debug.Log((startingObjectNumLimits[i] - startingObjectNums[i]) + ": " + i);
+                    //Debug.Log((startingObjectNumLimits[i] - startingObjectNums[i]) + ": " + i);
                 }  
             }
 

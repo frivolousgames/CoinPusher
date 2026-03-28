@@ -24,7 +24,7 @@ public class KidSceneManager : MonoBehaviour
     [SerializeField]
     Slider kidSlider;
     public static int kidHealth;
-    public static int kidMaxHealth = 1;
+    public static int kidMaxHealth = 100;
 
     [SerializeField]
     Text timeText;
@@ -37,8 +37,12 @@ public class KidSceneManager : MonoBehaviour
     GameObject endScreen;
 
     [SerializeField]
-    int[] credits;
-    public static int selectedCredits;
+    float[] credits;
+    public static float selectedCredits;
+
+    //Audio
+    [SerializeField]
+    GameObject themePlayer;
 
     private void Awake()
     {
@@ -47,6 +51,7 @@ public class KidSceneManager : MonoBehaviour
         kidSlider.value = kidHealth;
         time = maxTime;
         timeText.text = Mathf.RoundToInt(time).ToString();
+        isLost = false;
     }
 
     private void Update()
@@ -64,6 +69,7 @@ public class KidSceneManager : MonoBehaviour
         {
             time-= Time.deltaTime;
             timeText.text = Mathf.RoundToInt(time).ToString();
+            reticle.SetActive(true);
             Cursor.visible = false;
         }
         if (Mathf.RoundToInt(time) == 0)
@@ -73,6 +79,7 @@ public class KidSceneManager : MonoBehaviour
                 isLost = true;
                 reticle.SetActive(false);
                 Cursor.visible = true;
+                themePlayer.SetActive(false);
                 endScreen.SetActive(true);
             }
         }
@@ -83,9 +90,10 @@ public class KidSceneManager : MonoBehaviour
                 isWon = true;
                 reticle.SetActive(false);
                 Cursor.visible = true;
-                selectedCredits = credits[Random.Range(0, credits.Length)];
-                int tempPlays = PlayerPrefs.GetInt("Credits", 0);
-                PlayerPrefs.SetInt("Credits", tempPlays + selectedCredits);
+                themePlayer.SetActive(false);
+                SetCreditAmount();
+                //float tempCredits = PlayerPrefs.GetFloat("Credits", 0f);
+                PlayerPrefs.SetFloat("Credits", selectedCredits);
                 endScreen.SetActive(true);
             }
         }
@@ -108,5 +116,27 @@ public class KidSceneManager : MonoBehaviour
         yield return new WaitForSeconds(shootWait);
         isShooting = false;
         yield break;
+    }
+
+    void SetCreditAmount()
+    {
+        int rand = Random.Range(0, 101);
+        if(rand >= 0 && rand <= 25)
+        {
+            selectedCredits = credits[0];
+        }
+        else if (rand > 25 && rand <= 70)
+        {
+            selectedCredits = credits[1];
+        }
+        else if (rand > 70 && rand <= 90)
+        {
+            selectedCredits = credits[2];
+        }
+        else
+        {
+            selectedCredits = credits[3];
+        }
+        Debug.Log("Rand: " + rand);
     }
 }

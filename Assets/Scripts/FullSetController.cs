@@ -62,7 +62,7 @@ public class FullSetController : MonoBehaviour
     {
         while (points > 0)
         {
-            SceneManager.score += 10;
+            PlaySceneManager.score += 10;
             points -= 10;
             pointsText.text = "+" + points.ToString();
             drainSound.Play();

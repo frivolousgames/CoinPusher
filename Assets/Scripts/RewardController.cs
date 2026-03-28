@@ -107,6 +107,10 @@ public class RewardController : MonoBehaviour
     [SerializeField]
     UnityEvent saberEvent;
 
+    ///ALL GOALS
+    [SerializeField]
+    UnityEvent allGoalsEvent;
+
     private void Awake()
     {
         closed = false;
@@ -258,7 +262,7 @@ public class RewardController : MonoBehaviour
         ///SCORES///////
         if (fiveK == 0)
         {
-            if (SceneManager.score >= 5000)
+            if (PlaySceneManager.score >= 5000)
             {
                 fiveK = 1;
                 popUpList.Add("5K");
@@ -267,7 +271,7 @@ public class RewardController : MonoBehaviour
         }
         if (tenK == 0)
         {
-            if (SceneManager.score >= 10000)
+            if (PlaySceneManager.score >= 10000)
             {
                 tenK = 1;
                 popUpList.Add("10K");
@@ -276,7 +280,7 @@ public class RewardController : MonoBehaviour
         }
         if (twentyFiveK == 0)
         {
-            if (SceneManager.score >= 25000)
+            if (PlaySceneManager.score >= 25000)
             {
                 twentyFiveK = 1;
                 popUpList.Add("25K");
@@ -285,7 +289,7 @@ public class RewardController : MonoBehaviour
         }
         if (fiftyK == 0)
         {
-            if (SceneManager.score >= 50000)
+            if (PlaySceneManager.score >= 50000)
             {
                 fiftyK = 1;
                 popUpList.Add("50K");
@@ -294,7 +298,7 @@ public class RewardController : MonoBehaviour
         }
         if (seventyFiveK == 0)
         {
-            if (SceneManager.score >= 75000)
+            if (PlaySceneManager.score >= 75000)
             {
                 seventyFiveK = 1;
                 popUpList.Add("75K");
@@ -303,7 +307,7 @@ public class RewardController : MonoBehaviour
         }
         if (hundredK == 0)
         {
-            if (SceneManager.score >= 100000)
+            if (PlaySceneManager.score >= 100000)
             {
                 hundredK = 1;
                 popUpList.Add("100K");
@@ -312,7 +316,7 @@ public class RewardController : MonoBehaviour
         }
         if (twofiftyK == 0)
         {
-            if (SceneManager.score >=250000)
+            if (PlaySceneManager.score >=250000)
             {
                 twofiftyK = 1;
                 popUpList.Add("250K");
@@ -321,7 +325,7 @@ public class RewardController : MonoBehaviour
         }
         if (fiveHundredK == 0)
         {
-            if (SceneManager.score >= 500000)
+            if (PlaySceneManager.score >= 500000)
             {
                 fiveHundredK = 1;
                 popUpList.Add("500K");
@@ -330,7 +334,7 @@ public class RewardController : MonoBehaviour
         }
         if (million == 0)
         {
-            if (SceneManager.score >= 1000000)
+            if (PlaySceneManager.score >= 1000000)
             {
                 million = 1;
                 popUpList.Add("Million");
@@ -349,7 +353,7 @@ public class RewardController : MonoBehaviour
     {
         for(int i = 0; i < points.Length; i++)
         {
-            if (points[i] == 0 && SceneManager.score >= pointsScore[i])
+            if (points[i] == 0 && PlaySceneManager.score >= pointsScore[i])
             {
                 PlayerPrefs.SetInt(pointsName[i], 1);
                 checkGoals.Invoke();
@@ -527,8 +531,14 @@ public class RewardController : MonoBehaviour
                 goldEvent.Invoke();
                 break;
 
-            case "Saber":
+            case "Sabers":
                 saberEvent.Invoke();
+                break;
+
+            case "All Goals":
+                PlayerPrefs.SetInt("All Goals", 1);
+                allGoalsEvent.Invoke();
+                checkGoals.Invoke();
                 break;
         }
     }

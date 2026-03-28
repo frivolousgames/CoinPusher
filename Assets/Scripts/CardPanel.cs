@@ -21,14 +21,14 @@ public class CardPanel : MonoBehaviour
 
     public void SetCardAmounts()
     {
-        for (int i = 0; i < SceneManager.cardArray.Length;  i++)
+        for (int i = 0; i < PlaySceneManager.cardArray.Length;  i++)
         {
-            if (SceneManager.cardArray[i] == 0)
+            if (PlaySceneManager.cardArray[i] == 0)
             {
                 cardImages[i].color = nullColor;
                 multiText[i].gameObject.SetActive(false);
             }
-            else if (SceneManager.cardArray[i] == 1)
+            else if (PlaySceneManager.cardArray[i] == 1)
             {
                 cardImages[i].color = Color.white;
                 multiText[i].gameObject.SetActive(false);
@@ -36,7 +36,7 @@ public class CardPanel : MonoBehaviour
             else
             {
                 cardImages[i].color = Color.white;
-                multiText[i].text = "x" + SceneManager.cardArray[i].ToString();
+                multiText[i].text = "x" + PlaySceneManager.cardArray[i].ToString();
                 multiText[i].gameObject.SetActive(true);
             }
         }

@@ -8,6 +8,9 @@ public class PlayAdder : MonoBehaviour
     [SerializeField]
     Text playAddText;
 
+    [SerializeField]
+    float fee;
+
     ///AUDIO////
     [SerializeField]
     AudioSource playAdd;
@@ -16,21 +19,31 @@ public class PlayAdder : MonoBehaviour
     
     public void AddPlays()
     {
-        if (SceneManager.plays <= 979)
+        if(PlaySceneManager.credits >= fee)
         {
-            SceneManager.plays += 20;
-            playAddText.text = "+20 Plays";
-            playAdd.Play();
-        }
-        else if (SceneManager.plays > 979 && SceneManager.plays < 999)
-        {
-            playAddText.text = "+20 Plays";
-            SceneManager.plays = 999;
-            playAdd.Play();
+            if (PlaySceneManager.plays <= 979)
+            {
+                PlaySceneManager.plays += 20;
+                PlaySceneManager.credits -= 1.00f;
+                playAddText.text = "+20 Plays";
+                playAdd.Play();
+            }
+            else if (PlaySceneManager.plays > 979 && PlaySceneManager.plays < 999)
+            {
+                playAddText.text = "+20 Plays";
+                PlaySceneManager.plays = 999;
+                PlaySceneManager.credits -= 1.00f;
+                playAdd.Play();
+            }
+            else
+            {
+                playAddText.text = "Error";
+                playAddDeny.Play();
+            }
         }
         else
         {
-            playAddText.text = "Error";
+            playAddText.text = "Not Enough Credits";
             playAddDeny.Play();
         }
     }

@@ -36,6 +36,6 @@ public class SaberRoutine : MonoBehaviour
 
     private void OnDisable()
     {
-        saberPanel.SetActive(false);
+        Sabercontroller.saberEnd = true;
     }
 }

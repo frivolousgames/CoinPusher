@@ -30,6 +30,7 @@ public class HitCollision : MonoBehaviour
     {
         hitResetWait = 0.25f;
         eOffset = new Vector3(0f, 0f, zOff);
+        isHit = false;
     }
     private void OnTriggerEnter(Collider other)
     {

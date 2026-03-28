@@ -11,4 +11,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Play Screen.unity
     guid: eb395addd290c7f468e1445a4b7d8279
+  - enabled: 1
+    path: Assets/Scenes/Kid Attack.unity
+    guid: 2bf3674de42f2ef45b854f5c25b77a47
   m_configObjects: {}

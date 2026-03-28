@@ -98,7 +98,7 @@ public class StoreController : MonoBehaviour
         galleryImages = new List<Image>();
         itemPrices = new int[storeItemObjects.Length];
         sabers = new int[] {1, 3};
-        saberTypes = new string[] { "Saber Sweep", "Saber Sweep 3X" };
+        saberTypes = new string[] { "Saber Sweep", "Saber Sweep X3" };
         multiTypes = new string[] { "Vader Coin Bonus Shot X2", "Yoda Coin Bonus Shot X2", "Card Bonus Shot X2" };
         bonusTypes = new string[] { "VaderShot", "YodaShot", "CardShot" };
         CreatePricesArray();
@@ -114,7 +114,7 @@ public class StoreController : MonoBehaviour
     private void Update()
     {
         SetItemVariables();
-        pointsText.text = SceneManager.score.ToString();
+        pointsText.text = PlaySceneManager.score.ToString();
     }
 
     void CreateItems()
@@ -197,7 +197,7 @@ public class StoreController : MonoBehaviour
                             if (storeItemObjects[i].itemName == saberTypes[j])
                             {
                                 chosenSaber = sabers[j];
-                                chosenSaberType = "Saber";
+                                chosenSaberType = "Sabers";
                                 break;
                             }
                         }
@@ -228,7 +228,7 @@ public class StoreController : MonoBehaviour
                             buyButtonBlock.SetActive(true);
                         }
                     }
-                    else if (chosenPrice > SceneManager.score)
+                    else if (chosenPrice > PlaySceneManager.score)
                     {
                         itemBlock.SetActive(false);
                         buyButtonBlock.SetActive(true);
@@ -237,7 +237,7 @@ public class StoreController : MonoBehaviour
                     {
                         itemBlock.SetActive(false);
                         buyButtonBlock.SetActive(true);
-                        Debug.Log("Chosen Bonus: " + chosenBonus);
+                        //Debug.Log("Chosen Bonus: " + chosenBonus);
                     }
 
                     else
@@ -279,19 +279,24 @@ public class StoreController : MonoBehaviour
     {
         if (isMulti)
         {
-            PlayerPrefs.SetInt(chosenObject, 2);
+            PlayerPrefs.SetInt(chosenBonus, 2);
+            PlayerPrefs.SetInt(chosenObject, 1);
+            Debug.Log("Chosen Object: " + chosenObject);
+            Debug.Log("Chosen Bonus: " + chosenBonus);
+
         }
         else if (isSaber)
         {
+            PlayerPrefs.SetInt(chosenObject, 1);
             int s = PlayerPrefs.GetInt(chosenSaberType, 0);
             PlayerPrefs.SetInt(chosenSaberType, s + chosenSaber);
             saberEvent.Invoke();
-            SceneManager.score -= chosenPrice;
+            PlaySceneManager.score -= chosenPrice;
             Text pS = Instantiate(priceSubtractor, mainCanvas);
             pS.transform.position = pointsTrans.position;
             pS.text = "-" + chosenPrice;
             buyMenu.SetActive(false);
-            if (chosenPrice > SceneManager.score)
+            if (chosenPrice > PlaySceneManager.score)
             {
                 itemBlock.SetActive(false);
                 buyButtonBlock.SetActive(true);
@@ -310,7 +315,7 @@ public class StoreController : MonoBehaviour
         }
 
         Debug.Log("Bought");
-        SceneManager.score -= chosenPrice;
+        PlaySceneManager.score -= chosenPrice;
         Text ps = Instantiate(priceSubtractor, mainCanvas);
         ps.transform.position = pointsTrans.position;
         ps.text = "-" + chosenPrice;

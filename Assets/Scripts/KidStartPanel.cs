@@ -8,6 +8,8 @@ public class KidStartPanel : MonoBehaviour
     [SerializeField]
     bool go;
     public static bool isStarted;
+    [SerializeField]
+    GameObject themePlayer;
 
     private void Awake()
     {
@@ -23,6 +25,7 @@ public class KidStartPanel : MonoBehaviour
     public void StartButton()
     {
         go = true;
+        themePlayer.SetActive(true);
     }
 
     public void StartPlay()

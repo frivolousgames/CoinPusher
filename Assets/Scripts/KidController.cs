@@ -77,7 +77,11 @@ public class KidController : MonoBehaviour
     //[SerializeField]
     //Transform backTrans;
 
-    Coroutine kidCoroutine;
+    Coroutine kidRoutine;
+    Coroutine walkRoutine;
+    Coroutine jumpRoutine;
+    Coroutine jumpSideRoutine;
+    Coroutine lickRoutine;
     [SerializeField]
     GameObject reticle;
 
@@ -124,9 +128,9 @@ public class KidController : MonoBehaviour
             jumpRight = false;
             jumpLeft = false;
             isTurning = false;
-            if(kidCoroutine != null)
+            if(kidRoutine != null)
             {
-                StopCoroutine(kidCoroutine);
+                StopCoroutine(kidRoutine);
             }
         }
         if (!isLose)
@@ -135,7 +139,7 @@ public class KidController : MonoBehaviour
             {
                 isLose = true;
                 moveSpeed = runSpeed;
-                StopCoroutine(kidCoroutine);
+                StopCoroutine(kidRoutine);
                 StartCoroutine(LoseRoutine());
             }
         }
@@ -151,7 +155,7 @@ public class KidController : MonoBehaviour
         if (other.CompareTag("Ground"))
         {
             isLand = true;
-            Debug.Log("Landed");
+            //Debug.Log("Landed");
         }
     }
     private void OnTriggerExit(Collider other)
@@ -159,47 +163,52 @@ public class KidController : MonoBehaviour
         if (other.CompareTag("Ground"))
         {
             isLand = false;
-            Debug.Log("InAir");
+            //Debug.Log("InAir");
         }
     }
 
+    public void StartRoutine()
+    {
+        kidRoutine = StartCoroutine(KidRoutine());
+        //reticle.SetActive(true);
+    }
 
     IEnumerator KidRoutine()
     {
-        while (!isDead)
+        while (!isDead && !isLose)
         {
-            Coroutine jumpUpRoutine = StartCoroutine(JumpUpRoutine());
+            jumpRoutine = StartCoroutine(JumpUpRoutine());
             yield return new WaitForSeconds(jumpUpLength);
             isJumpUp = false;
 
-            while (!isLand && !isDead)
+            while (!isLand && !isDead && !isLose)
             {
                 yield return null;
             }
             yield return new WaitForSeconds(idleTime);
 
-            Coroutine walkRoutine = StartCoroutine(WalkRoutine());
+            walkRoutine = StartCoroutine(WalkRoutine());
             yield return new WaitForSeconds(walkLength);
             isWalking = false;
             yield return new WaitForSeconds(idleTime);
 
             StartCoroutine(TurnRoutine());
-            while (isTurning && !isDead)
+            while (isTurning && !isDead && !isLose)
             {
                 yield return null;
             }
 
-            Coroutine jumpSideRoutine = StartCoroutine(JumpSideRoutine());
+            jumpSideRoutine = StartCoroutine(JumpSideRoutine());
             yield return new WaitForSeconds(jumpSideLength);
             isJumpSide = false;
             yield return new WaitForSeconds(idleTime);
             
-            while (!isLand && !isDead)
+            while (!isLand && !isDead && !isLose)
             {
                 yield return null;
             }
 
-            Coroutine lickRoutine = StartCoroutine(LickRoutine());
+            lickRoutine = StartCoroutine(LickRoutine());
             yield return new WaitForSeconds(lickLength);
             isLicking = false;
             yield return new WaitForSeconds(idleTime);
@@ -212,7 +221,7 @@ public class KidController : MonoBehaviour
         isWalking = true;
         int i = SetDirection();
         selectedTarget = targets[i];
-        while (isWalking && !isDead)
+        while (isWalking && !isDead && !isLose)
         {
             yield return new WaitForSeconds(Random.Range(1f, 2f));
             if (i == 0)
@@ -224,9 +233,10 @@ public class KidController : MonoBehaviour
                 i = 0;
             }
             selectedTarget = targets[i];
+            //Debug.Log("Walk Routine");
             yield return null;
         }
-        Debug.Log("Exit WalkRoutine");
+        //Debug.Log("Exit WalkRoutine");
         yield break;
     }
 
@@ -243,18 +253,18 @@ public class KidController : MonoBehaviour
             jumpLeft = false;
         }
         transform.rotation = Quaternion.identity;
-        while(isJumpSide && !isDead)
+        while(isJumpSide && !isDead && !isLose)
         {
             
-            while (isLand && !isDead)
+            while (isLand && !isDead && !isLose)
             {
                 yield return null;
             }
-            while (!isLand && !isDead)
+            while (!isLand && !isDead && !isLose)
             {
                 yield return null;
             }
-            if (isLand && !isDead)
+            if (isLand && !isDead && !isLose)
             {
                 if (i == 0)
                 {
@@ -269,7 +279,7 @@ public class KidController : MonoBehaviour
             }
             yield return null;
         }
-        Debug.Log("Exit JumpSideRoutine");
+        //Debug.Log("Exit JumpSideRoutine");
         yield break;
     }
 
@@ -277,26 +287,26 @@ public class KidController : MonoBehaviour
     {
         isJumpUp = true;
         transform.rotation = Quaternion.identity;
-        Debug.Log("Exit JumpUpRoutine");
+        //Debug.Log("Exit JumpUpRoutine");
         yield break;
     }
 
     IEnumerator LickRoutine()
     { 
         isLicking = true;
-        Debug.Log("Exit LickRoutine");
+        //Debug.Log("Exit LickRoutine");
         yield break;
     }
 
     IEnumerator TurnRoutine()
     {
         isTurning = true;
-        while (transform.rotation != Quaternion.identity && !isDead)
+        while (transform.rotation != Quaternion.identity && !isDead && !isLose)
         {
             if(Mathf.Abs(transform.rotation.eulerAngles.y - Quaternion.identity.eulerAngles.y) < .1f)
             {
                 transform.rotation = Quaternion.identity;
-                Debug.Log(transform.rotation);
+                //Debug.Log(transform.rotation);
             }
 
             rb.MoveRotation(Quaternion.Lerp(rb.rotation, Quaternion.identity, 10 * Time.fixedDeltaTime));
@@ -309,10 +319,26 @@ public class KidController : MonoBehaviour
 
     IEnumerator LoseRoutine()
     {
-        //while (!isLand)
-        //{
-        //    yield return null;
-        //}
+        while (!isLand)
+        {
+            yield return null;
+        }
+        if (jumpRoutine != null)
+        {
+            StopCoroutine(jumpRoutine);
+        }
+        if (walkRoutine != null)
+        {
+            StopCoroutine(walkRoutine);
+        }
+        if (lickRoutine != null)
+        {
+            StopCoroutine(lickRoutine);
+        }
+        if (jumpSideRoutine != null)
+        {
+            StopCoroutine(jumpSideRoutine);
+        }
         isJumpSide = false;
         isJumpUp = false;
         isLicking = false;
@@ -326,7 +352,7 @@ public class KidController : MonoBehaviour
 
     public void JumpUp()
     {
-        if (isLand && !isDead)
+        if (isLand && !isDead && !isLose)
         {
             rb.AddForce(Vector3.up * jumpY, ForceMode.Impulse);
         } 
@@ -334,7 +360,7 @@ public class KidController : MonoBehaviour
 
     public void JumpSide()
     {
-        if (isLand && !isDead)
+        if (isLand && !isDead && !isLose)
         {
             if (jumpLeft)
             {
@@ -351,11 +377,13 @@ public class KidController : MonoBehaviour
     {
         if (isWalking && !isDead)
         {
+            
             Vector3 targetPos = new Vector3(selectedTarget.position.x, transform.position.y, transform.position.z);
             Vector3 rot = new Vector3(targetPos.x, 0f, 0f);
             Quaternion lookRot = Quaternion.LookRotation(-rot, Vector3.up);
             rb.MoveRotation(Quaternion.Lerp(rb.rotation, lookRot, rotSpeed * Time.fixedDeltaTime));
             rb.MovePosition(Vector3.Lerp(transform.position, targetPos,  moveSpeed * Time.fixedDeltaTime));
+            //Debug.Log("ST: " + selectedTarget);
         }
     }
 
@@ -387,11 +415,7 @@ public class KidController : MonoBehaviour
         }
     }
 
-    public void StartRoutine()
-    {
-        kidCoroutine = StartCoroutine(KidRoutine());
-        reticle.SetActive(true);
-    }
+
 
     public void SetIsOver()
     {

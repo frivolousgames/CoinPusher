@@ -20,11 +20,17 @@ public class GoalsController : MonoBehaviour
     Transform content;
 
     List<GameObject> goals;
+    int achievedGoals;
+    bool allGoals;
 
     private void Awake()
     {
         goals = new List<GameObject>();
         SpawnGoalObjects();
+        if(PlayerPrefs.GetInt("All Goals", 0) == 1)
+        {
+            allGoals = true;
+        }
     }
     
     void SpawnGoalObjects()
@@ -56,6 +62,20 @@ public class GoalsController : MonoBehaviour
             {
                 Image pic = goals[i].transform.GetChild(1).GetComponent<Image>();
                 pic.color = haveColor;
+                achievedGoals++;
+            }
+        }
+        if (!allGoals)
+        {
+            if(achievedGoals == goals.Count - 1)
+            {
+                allGoals = true;
+                RewardController.popUpList.Add("All Goals");
+                Debug.Log("All Goals");
+            }
+            else
+            {
+                achievedGoals = 0;
             }
         }
     }

@@ -41,7 +41,7 @@ AudioSource:
   m_GameObject: {fileID: 7635558942259020770}
   m_Enabled: 1
   serializedVersion: 4
-  OutputAudioMixerGroup: {fileID: 0}
+  OutputAudioMixerGroup: {fileID: -7678431503861283903, guid: 1af25d9a01dd08c409b53597c02e9a5d, type: 2}
   m_audioClip: {fileID: 0}
   m_PlayOnAwake: 0
   m_Volume: 0.566
@@ -573,7 +573,7 @@ ParticleSystem:
         m_RotationOrder: 4
     startRotationX:
       serializedVersion: 2
-      minMaxState: 0
+      minMaxState: 3
       scalar: 0
       minScalar: 0
       maxCurve:
@@ -626,7 +626,7 @@ ParticleSystem:
         m_RotationOrder: 4
     startRotationY:
       serializedVersion: 2
-      minMaxState: 0
+      minMaxState: 3
       scalar: 0
       minScalar: 0
       maxCurve:
@@ -679,8 +679,8 @@ ParticleSystem:
         m_RotationOrder: 4
     startRotation:
       serializedVersion: 2
-      minMaxState: 0
-      scalar: 0
+      minMaxState: 3
+      scalar: 6.283185
       minScalar: 0
       maxCurve:
         serializedVersion: 2
@@ -730,7 +730,7 @@ ParticleSystem:
         m_PreInfinity: 2
         m_PostInfinity: 2
         m_RotationOrder: 4
-    randomizeRotationDirection: 0
+    randomizeRotationDirection: 0.5
     maxNumParticles: 1000
     customEmitterVelocity: {x: 0, y: 0, z: 0}
     size3D: 0
@@ -738,7 +738,7 @@ ParticleSystem:
     gravityModifier:
       serializedVersion: 2
       minMaxState: 3
-      scalar: 2
+      scalar: 3.5
       minScalar: 0.7
       maxCurve:
         serializedVersion: 2
@@ -876,7 +876,7 @@ ParticleSystem:
     m_TextureBilinearFiltering: 0
     randomDirectionAmount: 1
     sphericalDirectionAmount: 1
-    randomPositionAmount: 0
+    randomPositionAmount: 0.2
     radius:
       value: 1
       mode: 0
@@ -1328,7 +1328,7 @@ ParticleSystem:
       serializedVersion: 2
       minMaxState: 3
       scalar: 0
-      minScalar: 0
+      minScalar: 1.7453293
       maxCurve:
         serializedVersion: 2
         m_Curve:
@@ -1381,7 +1381,7 @@ ParticleSystem:
       serializedVersion: 2
       minMaxState: 3
       scalar: 0
-      minScalar: 0
+      minScalar: 1.7453293
       maxCurve:
         serializedVersion: 2
         m_Curve:
@@ -1434,7 +1434,7 @@ ParticleSystem:
       serializedVersion: 2
       minMaxState: 3
       scalar: 6.283185
-      minScalar: 0.7853982
+      minScalar: 5.2359877
       maxCurve:
         serializedVersion: 2
         m_Curve:
@@ -4991,7 +4991,7 @@ ParticleSystemRenderer:
   m_FreeformStretching: 0
   m_RotateWithStretchDirection: 1
   m_VertexStreams: 00010304
-  m_Mesh: {fileID: 0}
+  m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
   m_Mesh1: {fileID: 0}
   m_Mesh2: {fileID: 0}
   m_Mesh3: {fileID: 0}
