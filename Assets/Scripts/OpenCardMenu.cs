@@ -12,7 +12,7 @@ public class OpenCardMenu : MonoBehaviour
     bool isOut;
 
     [SerializeField]
-    Animator panelAnim;
+    GameObject buttonBlock;
 
     private void Awake()
     {
@@ -22,10 +22,6 @@ public class OpenCardMenu : MonoBehaviour
     private void Update()
     {
         anim.SetBool("isOut", isOut);
-        if(panelAnim != null )
-        {
-            panelAnim.SetBool("isOut", isOut);
-        }
         //Debug.Log("isOut: " + isOut);
     }
 
@@ -41,4 +37,19 @@ public class OpenCardMenu : MonoBehaviour
             isOut = true;
         }
     }
+    public void BlockButtonOn()
+    {
+        if(buttonBlock != null)
+        {
+            buttonBlock.SetActive(true);
+        }
+    }
+    public void BlockButtonOff()
+    {
+        if (buttonBlock != null)
+        {
+            buttonBlock.SetActive(false);
+        }
+    }
+
 }

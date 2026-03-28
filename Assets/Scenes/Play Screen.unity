@@ -422,6 +422,82 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 6193117064441776502, guid: 0706cdab6efd4854f9838551c361340e, type: 3}
   m_PrefabInstance: {fileID: 3806105}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &4419393
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 4419394}
+  - component: {fileID: 4419396}
+  - component: {fileID: 4419395}
+  m_Layer: 5
+  m_Name: SettingsGearBlock
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 0
+--- !u!224 &4419394
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4419393}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1133834113}
+  m_RootOrder: 16
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: 846.5, y: 41.5}
+  m_SizeDelta: {x: 249.4, y: 234.4}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &4419395
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4419393}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 1, g: 1, b: 1, a: 0}
+  m_RaycastTarget: 1
+  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
+  m_Maskable: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  m_Sprite: {fileID: 0}
+  m_Type: 0
+  m_PreserveAspect: 0
+  m_FillCenter: 1
+  m_FillMethod: 4
+  m_FillAmount: 1
+  m_FillClockwise: 1
+  m_FillOrigin: 0
+  m_UseSpriteMesh: 0
+  m_PixelsPerUnitMultiplier: 1
+--- !u!222 &4419396
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4419393}
+  m_CullTransparentMesh: 1
 --- !u!1001 &4641779
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -3335,7 +3411,7 @@ MonoBehaviour:
   cardMenu: {fileID: 518846450}
   anim: {fileID: 518846453}
   isOut: 0
-  panelAnim: {fileID: 0}
+  buttonBlock: {fileID: 0}
 --- !u!114 &79881768
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3368,6 +3444,30 @@ MonoBehaviour:
         - m_Target: {fileID: 206935625}
           m_TargetAssemblyTypeName: OpenCardMenu, Assembly-CSharp
           m_MethodName: SlideOut
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+        - m_Target: {fileID: 2005866731}
+          m_TargetAssemblyTypeName: SettingsBlockPanel, Assembly-CSharp
+          m_MethodName: Close
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+        - m_Target: {fileID: 206935625}
+          m_TargetAssemblyTypeName: OpenCardMenu, Assembly-CSharp
+          m_MethodName: BlockButtonOff
           m_Mode: 1
           m_Arguments:
             m_ObjectArgument: {fileID: 0}
@@ -5086,6 +5186,30 @@ MonoBehaviour:
             m_StringArgument: 
             m_BoolArgument: 0
           m_CallState: 2
+        - m_Target: {fileID: 2005866731}
+          m_TargetAssemblyTypeName: SettingsBlockPanel, Assembly-CSharp
+          m_MethodName: Close
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+        - m_Target: {fileID: 206935625}
+          m_TargetAssemblyTypeName: OpenCardMenu, Assembly-CSharp
+          m_MethodName: BlockButtonOff
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
 --- !u!114 &122249881
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5101,7 +5225,7 @@ MonoBehaviour:
   cardMenu: {fileID: 1978530098}
   anim: {fileID: 1978530102}
   isOut: 0
-  panelAnim: {fileID: 0}
+  buttonBlock: {fileID: 4419393}
 --- !u!65 &123354803
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -5598,7 +5722,7 @@ RectTransform:
   m_Children:
   - {fileID: 872509034}
   m_Father: {fileID: 1133834113}
-  m_RootOrder: 29
+  m_RootOrder: 31
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -8863,12 +8987,12 @@ RectTransform:
   - {fileID: 1072816559}
   - {fileID: 236969178}
   m_Father: {fileID: 1133834113}
-  m_RootOrder: 16
+  m_RootOrder: 17
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0.5}
   m_AnchorMax: {x: 0, y: 0.5}
   m_AnchoredPosition: {x: 63.099976, y: 43}
-  m_SizeDelta: {x: 281, y: 100}
+  m_SizeDelta: {x: 104.71, y: 100}
   m_Pivot: {x: 0, y: 0.5}
 --- !u!114 &206935624
 MonoBehaviour:
@@ -8900,7 +9024,7 @@ MonoBehaviour:
   cardMenu: {fileID: 339829182}
   anim: {fileID: 339829186}
   isOut: 0
-  panelAnim: {fileID: 0}
+  buttonBlock: {fileID: 4419393}
 --- !u!114 &206935626
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -8921,6 +9045,30 @@ MonoBehaviour:
         - m_Target: {fileID: 206935625}
           m_TargetAssemblyTypeName: OpenCardMenu, Assembly-CSharp
           m_MethodName: SlideOut
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+        - m_Target: {fileID: 2005866731}
+          m_TargetAssemblyTypeName: SettingsBlockPanel, Assembly-CSharp
+          m_MethodName: Open
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+        - m_Target: {fileID: 206935625}
+          m_TargetAssemblyTypeName: OpenCardMenu, Assembly-CSharp
+          m_MethodName: BlockButtonOn
           m_Mode: 1
           m_Arguments:
             m_ObjectArgument: {fileID: 0}
@@ -9689,7 +9837,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -162.24, y: -3.2}
+  m_AnchoredPosition: {x: -71.25, y: -3.2}
   m_SizeDelta: {x: 165.5, y: 240.6}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &236969179
@@ -13848,7 +13996,7 @@ RectTransform:
   - {fileID: 547392723}
   - {fileID: 1087777183}
   m_Father: {fileID: 1133834113}
-  m_RootOrder: 17
+  m_RootOrder: 18
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0.5}
   m_AnchorMax: {x: 0, y: 0.5}
@@ -25051,11 +25199,11 @@ RectTransform:
   - {fileID: 435360806}
   - {fileID: 1970496805}
   m_Father: {fileID: 1133834113}
-  m_RootOrder: 20
+  m_RootOrder: 22
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0.5}
   m_AnchorMax: {x: 0, y: 0.5}
-  m_AnchoredPosition: {x: -1014.69995, y: 0}
+  m_AnchoredPosition: {x: -1009.5, y: 0}
   m_SizeDelta: {x: 1920, y: 1080}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &518846452
@@ -25919,6 +26067,30 @@ MonoBehaviour:
             m_StringArgument: 
             m_BoolArgument: 0
           m_CallState: 2
+        - m_Target: {fileID: 2005866731}
+          m_TargetAssemblyTypeName: SettingsBlockPanel, Assembly-CSharp
+          m_MethodName: Close
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+        - m_Target: {fileID: 206935625}
+          m_TargetAssemblyTypeName: OpenCardMenu, Assembly-CSharp
+          m_MethodName: BlockButtonOff
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
 --- !u!114 &547392725
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -25934,7 +26106,7 @@ MonoBehaviour:
   cardMenu: {fileID: 712273642}
   anim: {fileID: 712273645}
   isOut: 0
-  panelAnim: {fileID: 0}
+  buttonBlock: {fileID: 0}
 --- !u!114 &547392726
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -29295,7 +29467,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -91.2, y: -1.49}
+  m_AnchoredPosition: {x: -0.16999817, y: -1.49}
   m_SizeDelta: {x: 69.4, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &608638990
@@ -32664,7 +32836,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -116, y: -1.6}
+  m_AnchoredPosition: {x: -29, y: -1.6}
   m_SizeDelta: {x: 18.8, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &681782488
@@ -33220,7 +33392,7 @@ MonoBehaviour:
   cardMenu: {fileID: 1589344809}
   anim: {fileID: 1589344813}
   isOut: 0
-  panelAnim: {fileID: 0}
+  buttonBlock: {fileID: 4419393}
 --- !u!1001 &690261013
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -33872,7 +34044,7 @@ RectTransform:
   m_Children:
   - {fileID: 1719930340}
   m_Father: {fileID: 1133834113}
-  m_RootOrder: 23
+  m_RootOrder: 25
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -34291,7 +34463,7 @@ RectTransform:
   - {fileID: 2133084940}
   - {fileID: 1546606528}
   m_Father: {fileID: 1133834113}
-  m_RootOrder: 21
+  m_RootOrder: 23
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0.5}
   m_AnchorMax: {x: 0, y: 0.5}
@@ -35890,7 +36062,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -164, y: -3.2}
+  m_AnchoredPosition: {x: -70.1, y: -3.2}
   m_SizeDelta: {x: 165.5, y: 240.6}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &757966553
@@ -38959,7 +39131,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 13.7, y: -13.650024}
+  m_AnchoredPosition: {x: 13.7, y: -13.649963}
   m_SizeDelta: {x: 42.73, y: 67.76}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &832629095
@@ -39035,7 +39207,7 @@ RectTransform:
   m_Children:
   - {fileID: 1560676919}
   m_Father: {fileID: 1133834113}
-  m_RootOrder: 24
+  m_RootOrder: 26
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
@@ -49673,7 +49845,7 @@ RectTransform:
   m_Children:
   - {fileID: 1263271001}
   m_Father: {fileID: 1133834113}
-  m_RootOrder: 27
+  m_RootOrder: 29
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -54321,6 +54493,30 @@ MonoBehaviour:
             m_StringArgument: 
             m_BoolArgument: 0
           m_CallState: 2
+        - m_Target: {fileID: 2005866731}
+          m_TargetAssemblyTypeName: SettingsBlockPanel, Assembly-CSharp
+          m_MethodName: Close
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+        - m_Target: {fileID: 206935625}
+          m_TargetAssemblyTypeName: OpenCardMenu, Assembly-CSharp
+          m_MethodName: BlockButtonOff
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
 --- !u!114 &1087777186
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -56476,8 +56672,10 @@ RectTransform:
   - {fileID: 2005866727}
   - {fileID: 2069353502}
   - {fileID: 1935270646}
+  - {fileID: 4419394}
   - {fileID: 206935623}
   - {fileID: 339829183}
+  - {fileID: 1974216365}
   - {fileID: 1589344810}
   - {fileID: 1978530099}
   - {fileID: 518846451}
@@ -58629,6 +58827,30 @@ MonoBehaviour:
         - m_Target: {fileID: 689227836}
           m_TargetAssemblyTypeName: OpenCardMenu, Assembly-CSharp
           m_MethodName: SlideOut
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+        - m_Target: {fileID: 689227836}
+          m_TargetAssemblyTypeName: OpenCardMenu, Assembly-CSharp
+          m_MethodName: BlockButtonOff
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+        - m_Target: {fileID: 2005866731}
+          m_TargetAssemblyTypeName: SettingsBlockPanel, Assembly-CSharp
+          m_MethodName: Close
           m_Mode: 1
           m_Arguments:
             m_ObjectArgument: {fileID: 0}
@@ -61592,7 +61814,7 @@ RectTransform:
   m_Children:
   - {fileID: 1975603514}
   m_Father: {fileID: 1133834113}
-  m_RootOrder: 25
+  m_RootOrder: 27
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -62542,7 +62764,7 @@ RectTransform:
   m_Children:
   - {fileID: 317965872}
   m_Father: {fileID: 1133834113}
-  m_RootOrder: 30
+  m_RootOrder: 32
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -71646,7 +71868,7 @@ RectTransform:
   m_Children:
   - {fileID: 1092667164}
   m_Father: {fileID: 1133834113}
-  m_RootOrder: 28
+  m_RootOrder: 30
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -72286,7 +72508,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -90.98001, y: -1.6}
+  m_AnchoredPosition: {x: -3.9799576, y: -1.6}
   m_SizeDelta: {x: 18.8, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1539355470
@@ -74241,7 +74463,7 @@ RectTransform:
   - {fileID: 929235560}
   - {fileID: 1175740277}
   m_Father: {fileID: 1133834113}
-  m_RootOrder: 18
+  m_RootOrder: 20
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0.5}
   m_AnchorMax: {x: 0, y: 0.5}
@@ -80946,7 +81168,7 @@ RectTransform:
   m_Children:
   - {fileID: 862934321}
   m_Father: {fileID: 1133834113}
-  m_RootOrder: 26
+  m_RootOrder: 28
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -86364,7 +86586,7 @@ RectTransform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1133834113}
-  m_RootOrder: 22
+  m_RootOrder: 24
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -89619,8 +89841,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0.5}
   m_AnchorMax: {x: 0, y: 0.5}
-  m_AnchoredPosition: {x: 954.9, y: -86.22}
-  m_SizeDelta: {x: 1929.63, y: 997.44}
+  m_AnchoredPosition: {x: 954.9, y: -58.66}
+  m_SizeDelta: {x: 1929.63, y: 942.29}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1970496806
 MonoBehaviour:
@@ -89738,7 +89960,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -64.60001, y: -1.6}
+  m_AnchoredPosition: {x: 22.400036, y: -1.6}
   m_SizeDelta: {x: 18.8, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1971207245
@@ -89980,6 +90202,82 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 1977694969718273089, guid: e01023876916a3f4c98ab7d8a9a99748, type: 3}
   m_PrefabInstance: {fileID: 1974197607}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &1974216364
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1974216365}
+  - component: {fileID: 1974216367}
+  - component: {fileID: 1974216366}
+  m_Layer: 5
+  m_Name: OptionGearBlock
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 0
+--- !u!224 &1974216365
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1974216364}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1133834113}
+  m_RootOrder: 19
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: -844.7007, y: 41.5}
+  m_SizeDelta: {x: 249.4, y: 234.4}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &1974216366
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1974216364}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 1, g: 1, b: 1, a: 0}
+  m_RaycastTarget: 1
+  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
+  m_Maskable: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  m_Sprite: {fileID: 0}
+  m_Type: 0
+  m_PreserveAspect: 0
+  m_FillCenter: 1
+  m_FillMethod: 4
+  m_FillAmount: 1
+  m_FillClockwise: 1
+  m_FillOrigin: 0
+  m_UseSpriteMesh: 0
+  m_PixelsPerUnitMultiplier: 1
+--- !u!222 &1974216367
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1974216364}
+  m_CullTransparentMesh: 1
 --- !u!1 &1975603513
 GameObject:
   m_ObjectHideFlags: 0
@@ -90103,7 +90401,7 @@ RectTransform:
   - {fileID: 646310570}
   - {fileID: 343237936}
   m_Father: {fileID: 1133834113}
-  m_RootOrder: 19
+  m_RootOrder: 21
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0.5}
   m_AnchorMax: {x: 0, y: 0.5}
@@ -91152,6 +91450,7 @@ GameObject:
   - component: {fileID: 2005866729}
   - component: {fileID: 2005866728}
   - component: {fileID: 2005866730}
+  - component: {fileID: 2005866731}
   m_Layer: 5
   m_Name: Setting Block Panel
   m_TagString: Untagged
@@ -91192,7 +91491,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0.06407974, g: 0.17649223, b: 0.9056604, a: 0.12156863}
+  m_Color: {r: 0.06407974, g: 0.17649223, b: 0.9056604, a: 0}
   m_RaycastTarget: 0
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -91238,6 +91537,19 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
+--- !u!114 &2005866731
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2005866726}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: da7f883c3c161c141bf514a29d05eeca, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  isOpen: 0
 --- !u!1001 &2007044381
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -91705,6 +92017,30 @@ MonoBehaviour:
         - m_Target: {fileID: 2069353504}
           m_TargetAssemblyTypeName: OpenCardMenu, Assembly-CSharp
           m_MethodName: SlideOut
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+        - m_Target: {fileID: 2005866731}
+          m_TargetAssemblyTypeName: SettingsBlockPanel, Assembly-CSharp
+          m_MethodName: Close
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+        - m_Target: {fileID: 2069353504}
+          m_TargetAssemblyTypeName: OpenCardMenu, Assembly-CSharp
+          m_MethodName: BlockButtonOff
           m_Mode: 1
           m_Arguments:
             m_ObjectArgument: {fileID: 0}
@@ -93948,7 +94284,7 @@ RectTransform:
   m_AnchorMin: {x: 1, y: 0.5}
   m_AnchorMax: {x: 1, y: 0.5}
   m_AnchoredPosition: {x: -61.39673, y: 43}
-  m_SizeDelta: {x: 281, y: 100}
+  m_SizeDelta: {x: 100.75, y: 100}
   m_Pivot: {x: 0, y: 0.5}
 --- !u!114 &2069353503
 MonoBehaviour:
@@ -93980,7 +94316,7 @@ MonoBehaviour:
   cardMenu: {fileID: 1935270645}
   anim: {fileID: 1935270648}
   isOut: 0
-  panelAnim: {fileID: 0}
+  buttonBlock: {fileID: 1974216364}
 --- !u!114 &2069353505
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -94001,6 +94337,30 @@ MonoBehaviour:
         - m_Target: {fileID: 2069353504}
           m_TargetAssemblyTypeName: OpenCardMenu, Assembly-CSharp
           m_MethodName: SlideOut
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+        - m_Target: {fileID: 2005866731}
+          m_TargetAssemblyTypeName: SettingsBlockPanel, Assembly-CSharp
+          m_MethodName: Open
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+        - m_Target: {fileID: 2069353504}
+          m_TargetAssemblyTypeName: OpenCardMenu, Assembly-CSharp
+          m_MethodName: BlockButtonOn
           m_Mode: 1
           m_Arguments:
             m_ObjectArgument: {fileID: 0}
@@ -98051,7 +98411,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8543182304855284814, guid: e2b2a65d1aead244b97807bfb0b01233, type: 3}
       propertyPath: m_RootOrder
-      value: 32
+      value: 34
       objectReference: {fileID: 0}
     - target: {fileID: 8543182304855284814, guid: e2b2a65d1aead244b97807bfb0b01233, type: 3}
       propertyPath: m_AnchorMax.x
@@ -98339,7 +98699,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8906443195887470890, guid: 7b708150392cc824899398facb6ab546, type: 3}
       propertyPath: m_RootOrder
-      value: 31
+      value: 33
       objectReference: {fileID: 0}
     - target: {fileID: 8906443195887470890, guid: 7b708150392cc824899398facb6ab546, type: 3}
       propertyPath: m_AnchorMax.x

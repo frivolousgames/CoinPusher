@@ -65,11 +65,11 @@ public class PlaySceneManager : MonoBehaviour
     private void Awake()
     {
         //PlayerPrefs.DeleteAll();//TEMP
-        PlayerPrefs.SetInt("Full Sets", 100);//TEMP
+        //PlayerPrefs.SetInt("Full Sets", 100);//TEMP
         Physics.gravity = new Vector3(0f, -50, 0f);
         Application.targetFrameRate = 60;
         QualitySettings.vSyncCount = 0;
-        score = PlayerPrefs.GetInt("Score", 3000000);
+        score = PlayerPrefs.GetInt("Score", 0);
         credits = PlayerPrefs.GetFloat("Credits", 50f);
         plays = PlayerPrefs.GetInt("Plays", 0);
         cards = PlayerPrefs.GetInt("Cards", 0);
