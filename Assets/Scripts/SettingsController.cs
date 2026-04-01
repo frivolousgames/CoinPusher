@@ -27,6 +27,9 @@ public class SettingsController : MonoBehaviour
 
     [SerializeField]
     GameObject purgeMenu;
+
+    [SerializeField]
+    GameObject statsMenu;
     
     private void Awake()
     {

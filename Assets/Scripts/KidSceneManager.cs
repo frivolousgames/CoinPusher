@@ -40,6 +40,8 @@ public class KidSceneManager : MonoBehaviour
     float[] credits;
     public static float selectedCredits;
 
+    float timePlayed;
+
     //Audio
     [SerializeField]
     GameObject themePlayer;
@@ -54,6 +56,10 @@ public class KidSceneManager : MonoBehaviour
         isLost = false;
     }
 
+    private void Start()
+    {
+        timePlayed = PlayerPrefs.GetFloat("Total Time", 0f);
+    }
     private void Update()
     {
         Vector3 mousePos = Input.mousePosition;
@@ -95,8 +101,15 @@ public class KidSceneManager : MonoBehaviour
                 //float tempCredits = PlayerPrefs.GetFloat("Credits", 0f);
                 PlayerPrefs.SetFloat("Credits", selectedCredits);
                 endScreen.SetActive(true);
+                //stats
+                int i = PlayerPrefs.GetInt("Kids Killed", 0);
+                PlayerPrefs.SetInt("Kids Killed", i + 1);
             }
         }
+
+        //stats
+        timePlayed += Time.deltaTime;
+        PlayerPrefs.SetFloat("Total Time", timePlayed);
     }
 
     public void Shoot()

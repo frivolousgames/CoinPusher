@@ -11,6 +11,8 @@ public class CollectController : MonoBehaviour
     Text scoreAddObject;
     [SerializeField]
     GameObject mainCanvas;
+    [SerializeField]
+    Transform collectPopUpTrans;
     int scoreAmount;
     [SerializeField]
     AudioClip coinClip;
@@ -148,6 +150,9 @@ public class CollectController : MonoBehaviour
             selectedStartNum = trooperStartNum;
             Destroy(other.transform.parent.gameObject);
             SpawnObjects();
+            //Stats
+            int j = PlayerPrefs.GetInt("Total Trooper", 0);
+            PlayerPrefs.SetInt("Total Trooper", j + 1);
         }
         else if (other.CompareTag("Vader"))
         {
@@ -159,6 +164,9 @@ public class CollectController : MonoBehaviour
             selectedStartNum = vaderStartNum;
             Destroy(other.transform.parent.gameObject);
             SpawnObjects();
+            //Stats
+            int k = PlayerPrefs.GetInt("Total Vader", 0);
+            PlayerPrefs.SetInt("Total Vader", k + 1);
         }
         else if (other.CompareTag("Yoda"))
         {
@@ -170,6 +178,9 @@ public class CollectController : MonoBehaviour
             selectedStartNum = yodaStartNum;
             Destroy(other.transform.parent.gameObject);
             SpawnObjects();
+            //Stats
+            int l = PlayerPrefs.GetInt("Total Yoda", 0);
+            PlayerPrefs.SetInt("Total Yoda", l + 1);
         }
 
         else if (other.CompareTag("Elaut"))
@@ -178,6 +189,9 @@ public class CollectController : MonoBehaviour
             PlaySceneManager.score += 2;
             chosenClip = coinClip;
             Destroy(other.transform.parent.gameObject);
+            //Stats
+            int m = PlayerPrefs.GetInt("Total Silver", 0);
+            PlayerPrefs.SetInt("Total Silver", m + 1);
         }
         else if (other.CompareTag("Gold"))
         {
@@ -188,6 +202,9 @@ public class CollectController : MonoBehaviour
             startingObjectNums[5]--;
             AddGoldCoin();
             Destroy(other.transform.parent.gameObject);
+            //Stats
+            int n = PlayerPrefs.GetInt("Total Gold", 0);
+            PlayerPrefs.SetInt("Total Gold", n + 1);
         }
         else
         {
@@ -205,21 +222,28 @@ public class CollectController : MonoBehaviour
             SpawnObjects();
             cardMenuCheck.Invoke();
             CheckCardAmount();
-            //int i = 0;
+            //Stats
+            int o = PlayerPrefs.GetInt("Total Cards", 0);
+            PlayerPrefs.SetInt("Total Cards", o + 1);
+            //int j = 0;
             //foreach (var c in PlaySceneManager.cardArray)
             //{
-            //    Debug.Log(i + ": " + c);
-            //    i++;
+            //    Debug.Log(j + ": " + c);
+            //    j++;
             //}
         }
         //Debug.Log(other.tag);
         float xPos = Random.Range(minX, maxX);
         Vector3 pos = new Vector3(xPos, 0, 0);
-        Text scorePrefab = Instantiate(scoreAddObject, mainCanvas.transform);
+        Text scorePrefab = Instantiate(scoreAddObject, collectPopUpTrans);
         scorePrefab.text = "+" + scoreAmount.ToString();
         scorePrefab.transform.localPosition = pos;
         collectPlayer.PlayOneShot(chosenClip);
-        
+
+        //Stats
+        int i = PlayerPrefs.GetInt("Total Points", 0);
+        PlayerPrefs.SetInt("Total Points", i + scoreAmount);
+
     }
 
     void CheckCardAmount()
@@ -235,8 +259,12 @@ public class CollectController : MonoBehaviour
                 return;
             }
         }
+        SubtractFullSetCards(); 
         RewardController.popUpList.Add("Full Set");
-        SubtractFullSetCards();
+        //Stats
+        int i = PlayerPrefs.GetInt("Total Sets", 0);
+        PlayerPrefs.SetInt("Total Sets", i + 1);
+
         //Debug.Log("Subtracting");
     }
 
@@ -251,7 +279,7 @@ public class CollectController : MonoBehaviour
 
     void PickNextCard()
     {
-        if(previousCards.Count > 20)
+        if(previousCards.Count > 12)
         {
             foreach(var card in previousCards)
             {
@@ -262,23 +290,18 @@ public class CollectController : MonoBehaviour
                     Debug.Log("Vader found");
                     return;
                 }
-                else
-                {
-                    selectedObject = cards[7];
-                    chosenSpawnClip = cardSpawnClips[7];
-                    previousCards.Clear();
-                    Debug.Log("Vader Not found");
-                    return;
-                    //previousCards.Add(cards[7]);
-                    //previousCards.RemoveRange(0, 10);
-                }
             }
+            selectedObject = cards[7];
+            chosenSpawnClip = cardSpawnClips[7];
+            previousCards.Clear();
+            Debug.Log("Vader Not found");
+            return;
         }
         else
         {
             int random = Random.Range(0, 101);
             //Debug.Log("Random: " + random);
-            if (random <= 89)
+            if (random <= 90)
             {
                 int i = Random.Range(0, cards.Length - 1);
                 selectedObject = cards[i];
@@ -329,7 +352,7 @@ public class CollectController : MonoBehaviour
 
     IEnumerator SpawnWait()
     {
-        yield return new WaitForSeconds(3);
+        yield return new WaitForSeconds(2);
         if (spawning)
         {
             while (spawning)
@@ -338,7 +361,7 @@ public class CollectController : MonoBehaviour
             }
         }
         spawning = true;
-        yield return new WaitForSeconds(Random.Range(5, 20));
+        yield return new WaitForSeconds(Random.Range(2, 13));
         if (spawnedObjects.Count > 0 )
         {
             float lerpTime = 0f;
@@ -412,7 +435,7 @@ public class CollectController : MonoBehaviour
                 for (int j = 0; j < startingObjectNumLimits[i] - startingObjectNums[i]; j++)
                 {
                     SpawnObjects();
-                    //Debug.Log((startingObjectNumLimits[i] - startingObjectNums[i]) + ": " + i);
+                    //Debug.Log((startingObjectNumLimits[j] - startingObjectNums[j]) + ": " + j);
                 }  
             }
 

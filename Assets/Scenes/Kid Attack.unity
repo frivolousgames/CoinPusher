@@ -503,10 +503,10 @@ MonoBehaviour:
   timeText: {fileID: 1061564018}
   endScreen: {fileID: 1362258511}
   credits:
-  - 15
-  - 30
-  - 45
-  - 60
+  - 35
+  - 50
+  - 65
+  - 100
   themePlayer: {fileID: 1349656319}
 --- !u!1 &133983199
 GameObject:
@@ -8943,6 +8943,7 @@ MonoBehaviour:
   cardMenu: {fileID: 1935270645}
   anim: {fileID: 1935270648}
   isOut: 0
+  buttonBlock: {fileID: 0}
 --- !u!114 &2069353505
 MonoBehaviour:
   m_ObjectHideFlags: 0

@@ -353,6 +353,7 @@ public class CoinShooter : MonoBehaviour
             GameObject fab = Instantiate(GoldCoinController.chosenObject.objectGO[j], coinSpawn.position, Quaternion.Euler(coinRot), transform);
             fab.name = GoldCoinController.chosenObject.objectGO[j].name;
             CollectController.startingObjectNums[GoldCoinController.chosenStartNum]++;
+            Debug.Log("StartNum: " + CollectController.startingObjectNums[GoldCoinController.chosenStartNum]);
         }
         //Instantiate(coin, coinSpawn.position, Quaternion.Euler(coinRot), transform);
         ActivateCountLights();

@@ -3,6 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using Unity.VisualScripting;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class CoinShooterTurner : MonoBehaviour
 {
@@ -12,11 +13,22 @@ public class CoinShooterTurner : MonoBehaviour
     public float maxTurnY;
     [SerializeField]
     float rotSpeed;
-    public static  bool isTurning;
+    public static bool isTurning;
     public static bool isTurnable;
     public static bool turningLeft;
     bool isPressed;
     Coroutine turnRoutine;
+
+    [SerializeField]
+    Image turnR;
+    [SerializeField]
+    Image turnL;
+
+    [SerializeField]
+    Sprite turnUp;
+    [SerializeField]
+    Sprite turnDown;
+
 
     ///Audio///
     [SerializeField]
@@ -26,6 +38,12 @@ public class CoinShooterTurner : MonoBehaviour
     private void Awake()
     {
         isTurnable = true;
+    }
+
+    private void Start()
+    {
+        turnR.sprite = turnUp;
+        turnL.sprite = turnUp;
     }
 
     private void Update()
@@ -38,10 +56,12 @@ public class CoinShooterTurner : MonoBehaviour
         if (gameObject.name == "L")
         {
             turningLeft = true;
+            turnL.sprite = turnDown;
         }
         else
         {
             turningLeft = false;
+            turnR.sprite = turnDown;
         }
     }
 
@@ -49,13 +69,14 @@ public class CoinShooterTurner : MonoBehaviour
     {
         isPressed = true;
         isTurning = true;
-        
     }
 
     public void ButtonReleased()
     {
         isPressed = false;
         isTurning = false;
+        turnR.sprite = turnUp;
+        turnL.sprite = turnUp;
         turnSound.Stop();
         StopCoroutine(turnRoutine);
     }

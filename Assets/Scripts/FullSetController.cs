@@ -74,6 +74,8 @@ public class FullSetController : MonoBehaviour
         yield return new WaitForSeconds(1f);
         isOver = false;
         RewardController.isPopUp = false;
+        int i = PlayerPrefs.GetInt("Total Points", 0);
+        PlayerPrefs.SetInt("Total Points", i + 5000);
         yield break;
     }
 }

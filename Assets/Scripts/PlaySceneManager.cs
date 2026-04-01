@@ -1,9 +1,11 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.Events;
 using UnityEngine.UI;
+using UnityEngine.UIElements;
 
 public class PlaySceneManager : MonoBehaviour
 {
@@ -41,6 +43,8 @@ public class PlaySceneManager : MonoBehaviour
     [SerializeField]
     GameObject audioSource;
 
+    float timePlayed;
+    public static string timeFormatted;
     ///Save/Load
     [SerializeField]
     GameObject startObjects;
@@ -92,6 +96,8 @@ public class PlaySceneManager : MonoBehaviour
             isBroke = true;
             creditAdder.SetActive(true);
         }
+
+        timePlayed = PlayerPrefs.GetFloat("Total Time", 0f);
 
         ///Save
         
@@ -148,6 +154,14 @@ public class PlaySceneManager : MonoBehaviour
                 creditAdder.SetActive(true);
             }
         }
+        //Stats
+        timePlayed += Time.deltaTime;
+        PlayerPrefs.SetFloat("Total Time", timePlayed);
+        int seconds = Mathf.FloorToInt(timePlayed);
+        int minutes = seconds / 60;
+        var timeSpan = TimeSpan.FromSeconds(timePlayed);
+        timeFormatted = string.Format("{0:D2}:{1:D2}:{2:D2}:{3:D2}", timeSpan.Days, timeSpan.Hours, timeSpan.Minutes, timeSpan.Seconds);
+        //Debug.Log("Time: " +  timeFormatted);
     }
 
     IEnumerator LoadDisable()
