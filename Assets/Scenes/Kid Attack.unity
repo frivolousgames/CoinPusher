@@ -7589,10 +7589,10 @@ MonoBehaviour:
       m_Calls: []
   m_FontData:
     m_Font: {fileID: 12800000, guid: 70e610e8fa6acb14a80c61447fa20ec8, type: 3}
-    m_FontSize: 120
+    m_FontSize: 105
     m_FontStyle: 1
     m_BestFit: 0
-    m_MinSize: 10
+    m_MinSize: 1
     m_MaxSize: 300
     m_Alignment: 4
     m_AlignByGeometry: 0
@@ -8131,6 +8131,7 @@ MonoBehaviour:
   - {fileID: 583032576}
   mixer: {fileID: 24100000, guid: 1af25d9a01dd08c409b53597c02e9a5d, type: 2}
   purgeMenu: {fileID: 0}
+  statsMenu: {fileID: 0}
 --- !u!1 &1940600162
 GameObject:
   m_ObjectHideFlags: 0
